@@ -112,7 +112,7 @@ public class PlayerHealthbarModuleConfig {
   public static func ShowOutOfCombat() -> Bool = false
   public static func ShowInStealth() -> Bool = false
   public static func ShowWithWeapon() -> Bool = true
-  public static func ShowWithZoom() -> Bool = true
+  public static func ShowWithZoom() -> Bool = false
 }
 
 
