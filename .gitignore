@@ -1,0 +1,16 @@
+*.cache
+*.log
+**/.DS_Store
+**/cache
+**/log
+/*.*
+!.gitignore
+archive/pc/content
+archive/pc/mod_disabled
+bin/x64/*.*
+bin/x64/CrashReporter
+bin/x64/d3d12on7
+bin/x64/LICENSE
+BonusContent
+engine
+r6/cache
