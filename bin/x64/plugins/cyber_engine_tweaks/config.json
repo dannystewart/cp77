@@ -6,7 +6,7 @@
     "disable_async_compute": false,
     "disable_boundary_teleport": false,
     "disable_intro_movies": true,
-    "disable_vignette": true,
+    "disable_vignette": false,
     "disable_win7_vsync": false,
     "dump_game_options": false,
     "enable_debug": false,
