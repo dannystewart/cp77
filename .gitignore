@@ -1,10 +1,11 @@
+/*.*
+!.gitignore
 *.cache
 *.log
+*.sqlite3
 **/.DS_Store
 **/cache
 **/log
-/*.*
-!.gitignore
 archive/pc/content
 archive/pc/mod_disabled
 bin/x64/*.*
