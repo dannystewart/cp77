@@ -1,0 +1,19 @@
+{
+    "amd_smt": false,
+    "cetdev_enable_imgui_assertions": false,
+    "cetdev_remove_dead_bindings": true,
+    "disable_antialiasing": false,
+    "disable_async_compute": false,
+    "disable_boundary_teleport": false,
+    "disable_intro_movies": true,
+    "disable_vignette": true,
+    "disable_win7_vsync": false,
+    "dump_game_options": false,
+    "enable_debug": false,
+    "font_glyph_ranges": "",
+    "font_path": "",
+    "font_size": 13.0,
+    "minimap_flicker": true,
+    "remove_pedestrians": false,
+    "skip_start_menu": true
+}

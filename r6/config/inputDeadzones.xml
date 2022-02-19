@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!--
+	- radial deadzone should always be defined;
+    - "Default" angular deadzone should be defined;	
+    - define all coeffs like you would define them for positive x axis;
+	- if negative axis is not defined, it will be generated from reflected positive axis.
+-->
+
+<deadzones>
+    <radialDeadzone inner="0.05" outer="0.9" /> 
+	
+    <angularDeadzone name="Default" >
+        <axis name="xAxis" aCoeff="0.0" bCoeff="0.0" cCoeff="0.0" />
+        <axis name="yAxis" aCoeff="0.0" bCoeff="0.0" cCoeff="0.0" />
+    </angularDeadzone>
+
+	<!-- Left Analog Stick -->	
+	<angularDeadzone name="Preset_1" >
+		<axis name="xAxis" aCoeff="0.0" bCoeff="0.0" cCoeff="0.0" />			
+			<axis name="yAxis" aCoeff="0.0" bCoeff="0.2" cCoeff="0.0" >
+				<negative aCoeff="0.0" bCoeff="0.0" cCoeff="0.0" />				
+			</axis>
+	</angularDeadzone>
+	<!-- negative y axis is defined separately -->	
+	
+	<!-- Right Analog Stick -->	
+	<angularDeadzone name="Preset_2" >
+        <axis name="xAxis" aCoeff="0.032" bCoeff="0.07" cCoeff="0.0" />
+        <axis name="yAxis" aCoeff="0.035" bCoeff="0.0" cCoeff="0.0" />
+	</angularDeadzone>
+	
+	<angularDeadzone name="Preset_Vehicle" >
+        <axis name="xAxis" aCoeff="0.0" bCoeff="0.4" cCoeff="0.15" />
+        <axis name="yAxis" aCoeff="0.0" bCoeff="0.2" cCoeff="0.0" />
+	</angularDeadzone>
+
+</deadzones>
+

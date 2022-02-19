@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<input_actions>
+
+	<filter name="UINotifications" enabled="0">	
+	
+	<action name="click" onPress="1" onRelease="1" >
+		<key id="IK_LeftMouse"/>
+		<key id="IK_Pad_A_CROSS"/>
+	</action>
+	
+	<action name="proceed_popup" onPress="1" onRelease="1" >
+		<key id="IK_F"/>
+		<key id="IK_Enter"/>
+		<key id="IK_Pad_A_CROSS"/>
+	</action>
+		
+	<action name="cancel_popup" onPress="1" onRelease="1">
+		<key id="IK_C"/>
+		<key id="IK_Escape"/>
+		<key id="IK_Pad_B_CIRCLE"/>
+	</action>
+		
+	</filter>
+	
+	<filter name="UILoadingScreen" enabled="0">
+	
+	<action name="UI_Skip" onPress="1" onRelease="1" >
+		<key id="IK_Enter"/>
+		<key id="IK_Pad_A_CROSS"/>
+		<key id="IK_Escape"/>
+		<key id="IK_Pad_B_CIRCLE"/>
+		<key id="IK_Space" />
+	</action>
+	
+	</filter>
+
+</input_actions>
