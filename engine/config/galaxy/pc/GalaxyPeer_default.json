@@ -1,0 +1,23 @@
+{
+	"content": {
+		"version": "1.148.0.0 REDlauncher",
+		"broker_enabled": false,
+		"http_client": {
+			"thread_count": 4
+		},
+		"telemetry_sampling": [
+			{
+				"class": "Sampled",
+				"field": "meta.user.tracking_id",
+				"promil": 100
+			},
+			{
+				"class": "AppLaunched",
+				"field": "meta.user.tracking_id",
+				"promil": 100,
+				"dry_run": true,
+				"dry_run_result_path": "meta.is_sampled"
+			}
+		]
+	}
+}

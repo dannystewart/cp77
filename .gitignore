@@ -2,6 +2,7 @@
 /Cyberpunk2077.exe*
 !.gitignore
 *.cache
+*.exe
 *.log
 *.sqlite3
 **/.DS_Store
@@ -16,5 +17,4 @@ bin/x64/CrashReporter
 bin/x64/d3d12on7
 bin/x64/LICENSE
 BonusContent
-engine
 r6/cache

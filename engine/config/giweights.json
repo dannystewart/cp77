@@ -1,0 +1,9 @@
+{
+	"weights": {
+		"distanceShadow": 0.1,
+		"distanceProbe": 0.00,
+		"normal": 0.2,
+		"bias": 0.00,
+		"threshold": 0.28
+	}
+}
