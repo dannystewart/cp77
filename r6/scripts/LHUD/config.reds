@@ -22,7 +22,7 @@ public class ActionButtonsModuleConfig {
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowWithWeapon() -> Bool = true
   public static func ShowWithZoom() -> Bool = true
 }
@@ -37,7 +37,7 @@ public class CrouchIndicatorModuleConfig {
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowWithWeapon() -> Bool = true
   public static func ShowWithZoom() -> Bool = false
 }
@@ -61,7 +61,7 @@ public class HintsModuleConfig {
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowInVehicle() -> Bool = true
   public static func ShowWithWeapon() -> Bool = true
   public static func ShowWithZoom() -> Bool = true
@@ -77,7 +77,7 @@ public class MinimapModuleConfig {
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowInVehicle() -> Bool = true
   public static func ShowWithScanner() -> Bool = true
   public static func ShowWithWeapon() -> Bool = true
@@ -126,7 +126,7 @@ public class WorldMarkersModuleConfigQuest {
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowInVehicle() -> Bool = true
   public static func ShowWithScanner() -> Bool = true
   public static func ShowWithWeapon() -> Bool = true
@@ -158,7 +158,7 @@ public class WorldMarkersModuleConfigPOI {
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowInVehicle() -> Bool = true
   public static func ShowWithScanner() -> Bool = true
   public static func ShowWithWeapon() -> Bool = true
