@@ -105,7 +105,7 @@ public class PlayerHealthbarModuleConfig {
   // Default in-game visibility conditions
   public static func ShowWhenHealthNotFull() -> Bool = true
   public static func ShowWhenMemoryNotFull() -> Bool = true
-  public static func ShowWhenBuffsActive() -> Bool = true
+  public static func ShowWhenBuffsActive() -> Bool = false
   public static func ShowWhenQuickhacksActive() -> Bool = true
   public static func ShowInCombat() -> Bool = true
   // Additional visibility conditions
