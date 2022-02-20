@@ -743,6 +743,7 @@
 	<context name="UIShared">
 		<include name="UI" />
 		<include name="UINotifications" />
+		<action name="minimapPeek" 									map="minimapPeek_Button" 						priority="-1" />
 		<action name="back"											map="back"										priority="-1" />
 		<action name="change_account"								map="change_account"							priority="-1" />
 		<action name="left_button"									map="left_button"								priority="-1" />

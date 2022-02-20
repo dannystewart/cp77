@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <bindings>
 	<!-- MAPPINGS -->
+	<mapping name="minimapPeek_Button" type="Button" >
+        <button id="IK_F6" />
+    </mapping>
+
 	<mapping name="ToggleMinimap_Button" type="Button" >
         <button id="IK_L" overridableUI="minimapToggle"/>
     </mapping>
