@@ -33,9 +33,9 @@ public class WorldConfig {
   // Replace false with true if you want to hide icons for doors
   public static func HideDoors() -> Bool = false
   // Replace false with true if you want to hide icons for distraction objects
-  public static func HideDistractions() -> Bool = false
+  public static func HideDistractions() -> Bool = true
   // Replace false with true if you want to hide icons for explosive objects
-  public static func HideExplosives() -> Bool = false
+  public static func HideExplosives() -> Bool = true
   // Replace false with true if you want to hide icons for misc network devices (computers, smart screens etc.)
   public static func HideNetworking() -> Bool = true
 }
