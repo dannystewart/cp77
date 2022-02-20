@@ -27,7 +27,7 @@ public class WorldConfig {
   // Replace false with true if you want to hide icons for access points
   public static func HideAccessPoints() -> Bool = false
   // Replace false with true if you want to hide icons for containers where you can hide bodies
-  public static func HideBodyContainers() -> Bool = false
+  public static func HideBodyContainers() -> Bool = true
   // Replace false with true if you want to hide icons for cameras
   public static func HideCameras() -> Bool = false
   // Replace false with true if you want to hide icons for doors
@@ -37,7 +37,7 @@ public class WorldConfig {
   // Replace false with true if you want to hide icons for explosive objects
   public static func HideExplosives() -> Bool = false
   // Replace false with true if you want to hide icons for misc network devices (computers, smart screens etc.)
-  public static func HideNetworking() -> Bool = false
+  public static func HideNetworking() -> Bool = true
 }
 
 public class MiniMapConfig {
