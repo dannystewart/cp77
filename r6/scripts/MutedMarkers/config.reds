@@ -20,7 +20,7 @@ public class LootConfig {
   // Visibility for Common items (white)
   public static func Common() -> MarkerVisibility = MarkerVisibility.Scanner
   // Visibility for Shards
-  public static func Shards() -> MarkerVisibility = MarkerVisibility.LineOfSight
+  public static func Shards() -> MarkerVisibility = MarkerVisibility.Scanner
 }
 
 public class WorldConfig {
