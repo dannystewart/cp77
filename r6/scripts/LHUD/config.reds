@@ -121,11 +121,11 @@ public class PlayerHealthbarModuleConfig {
 
 // ---- Quest markers
 public class WorldMarkersModuleConfigQuest {
-  public static func IsEnabled() -> Bool = false
-  public static func BindToGlobalHotkey() -> Bool = false
+  public static func IsEnabled() -> Bool = true
+  public static func BindToGlobalHotkey() -> Bool = true
 
   public static func ShowInCombat() -> Bool = true
-  public static func ShowOutOfCombat() -> Bool = true
+  public static func ShowOutOfCombat() -> Bool = false
   public static func ShowInStealth() -> Bool = true
   public static func ShowInVehicle() -> Bool = true
   public static func ShowWithScanner() -> Bool = true
@@ -153,11 +153,11 @@ public class WorldMarkersModuleConfigLoot {
 // ---- Place Of Interest markers
 //      Contains Fast Travel points, fixers, vendors and all kinds of services
 public class WorldMarkersModuleConfigPOI {
-  public static func IsEnabled() -> Bool = false
-  public static func BindToGlobalHotkey() -> Bool = false
+  public static func IsEnabled() -> Bool = true
+  public static func BindToGlobalHotkey() -> Bool = true
 
   public static func ShowInCombat() -> Bool = true
-  public static func ShowOutOfCombat() -> Bool = true
+  public static func ShowOutOfCombat() -> Bool = false
   public static func ShowInStealth() -> Bool = true
   public static func ShowInVehicle() -> Bool = true
   public static func ShowWithScanner() -> Bool = true
