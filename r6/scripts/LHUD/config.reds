@@ -57,7 +57,7 @@ public class WeaponRosterModuleConfig {
 // -- HOTKEY HINTS
 public class HintsModuleConfig {
   public static func IsEnabled() -> Bool = true
-  public static func BindToGlobalHotkey() -> Bool = true
+  public static func BindToGlobalHotkey() -> Bool = false
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
@@ -154,9 +154,9 @@ public class WorldMarkersModuleConfigLoot {
 //      Contains Fast Travel points, fixers, vendors and all kinds of services
 public class WorldMarkersModuleConfigPOI {
   public static func IsEnabled() -> Bool = true
-  public static func BindToGlobalHotkey() -> Bool = true
+  public static func BindToGlobalHotkey() -> Bool = false
 
-  public static func ShowInCombat() -> Bool = true
+  public static func ShowInCombat() -> Bool = false
   public static func ShowOutOfCombat() -> Bool = false
   public static func ShowInStealth() -> Bool = false
   public static func ShowInVehicle() -> Bool = true
