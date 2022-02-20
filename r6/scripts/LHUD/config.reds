@@ -57,7 +57,7 @@ public class WeaponRosterModuleConfig {
 // -- HOTKEY HINTS
 public class HintsModuleConfig {
   public static func IsEnabled() -> Bool = true
-  public static func BindToGlobalHotkey() -> Bool = false
+  public static func BindToGlobalHotkey() -> Bool = true
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
