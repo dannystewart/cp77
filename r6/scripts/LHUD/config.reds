@@ -45,11 +45,11 @@ public class CrouchIndicatorModuleConfig {
 // -- WEAPON ROSTER
 public class WeaponRosterModuleConfig {
   public static func IsEnabled() -> Bool = true
-  public static func BindToGlobalHotkey() -> Bool = true
+  public static func BindToGlobalHotkey() -> Bool = false
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false
-  public static func ShowInStealth() -> Bool = true
+  public static func ShowInStealth() -> Bool = false
   public static func ShowWithWeapon() -> Bool = true
   public static func ShowWithZoom() -> Bool = true
 }
@@ -57,7 +57,7 @@ public class WeaponRosterModuleConfig {
 // -- HOTKEY HINTS
 public class HintsModuleConfig {
   public static func IsEnabled() -> Bool = true
-  public static func BindToGlobalHotkey() -> Bool = true
+  public static func BindToGlobalHotkey() -> Bool = false
 
   public static func ShowInCombat() -> Bool = true
   public static func ShowOutOfCombat() -> Bool = false

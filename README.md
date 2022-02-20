@@ -36,9 +36,11 @@
 
 #### Controlled by hotkey, enabled everywhere except out of combat
 - Action buttons
+- Minimap
+
+#### No hotkey, disabled out of combat / in stealth
 - Weapon roster
 - Hotkey hints
-- Minimap
 
 #### Disabled everywhere but still toggled by hotkey
 - Quest tracker
