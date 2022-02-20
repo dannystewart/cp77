@@ -3,7 +3,7 @@ module MutedMarkersConfig
 // Visibility types:
 //   * MarkerVisibility.ThroughWalls - visible through walls
 //   * MarkerVisibility.LineOfSight - visible when V sees it (very similar to default in-game behavior)
-//   * MarkerVisibility.Scanner - visible only when scanner is active 
+//   * MarkerVisibility.Scanner - visible only when scanner is active
 //   * MarkerVisibility.Hidden - not visible at all
 
 public class LootConfig {
@@ -16,7 +16,7 @@ public class LootConfig {
   // Visibility for Rate items (blue)
   public static func Rare() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Uncommon items (green)
-  public static func Uncommon() -> MarkerVisibility = MarkerVisibility.Scanner
+  public static func Uncommon() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Common items (white)
   public static func Common() -> MarkerVisibility = MarkerVisibility.Scanner
   // Visibility for Shards
