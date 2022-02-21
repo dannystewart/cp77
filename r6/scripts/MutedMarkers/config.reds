@@ -18,9 +18,9 @@ public class LootConfig {
   // Visibility for Uncommon items (green)
   public static func Uncommon() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Common items (white)
-  public static func Common() -> MarkerVisibility = MarkerVisibility.Scanner
+  public static func Common() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Shards
-  public static func Shards() -> MarkerVisibility = MarkerVisibility.Scanner
+  public static func Shards() -> MarkerVisibility = MarkerVisibility.LineOfSight
 }
 
 public class WorldConfig {
