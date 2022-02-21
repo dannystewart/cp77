@@ -3,7 +3,7 @@
 ------------------------------------------------
 -- Experience
 giveXP = true			-- gives XP as if using 'Tune Up' in-game skill
-xpFactor = 0.5			-- multiplier of Vanilla XP to give (Vanilla = 1.0) (Vanilla = Unc: 18, Rare: 36, Epic: 54, Legend: 90)
+xpFactor = 1.0			-- multiplier of Vanilla XP to give (Vanilla = 1.0) (Vanilla = Unc: 18, Rare: 36, Epic: 54, Legend: 90)
 
 -- Components
 doComponents = true		-- upgrade Crafting Components automatically
@@ -12,7 +12,7 @@ doQuickhacks = true		-- upgrade Quickhack Components automatically
 
 -- Skills
 requireTuneUp = false	-- if true, mod will not convert anything unless the character has unlocked the Tune-Up skill
-xpTuneUp = 1.0			-- XP factor to use when character has unlocked Tune-Up (independent of requireTuneUp)
+xpTuneUp = 1.5			-- XP factor to use when character has unlocked Tune-Up (independent of requireTuneUp)
 useOptimization = true	-- will use Cost Optimization to reduce crafting cost, if the character has the skill
 useNihilo = true		-- will use Ex Nihilo to give chance of free convert, if the character has the skill
 
@@ -40,14 +40,14 @@ limitEpic = 250
 
 maxUncommon = 400		-- will keep converting until these maximums are reached, and all higher tiers haven't reached their maximum
 maxRare = 350
-maxEpic = 300			
-maxLegendary = 250		
+maxEpic = 300
+maxLegendary = 250
 
 -- Upgrade Components
 limitUpgRare = 350
 limitUpgEpic = 250
 
-maxUpgEpic = 350	
+maxUpgEpic = 350
 maxUpgLegendary = 250
 
 -- Quickhack Components
@@ -107,21 +107,21 @@ registerForEvent("onUpdate", function(deltaTime)
 		idRare = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.RareMaterial1"))
 		idEpic = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.EpicMaterial1"))
 		idLegendary = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.LegendaryMaterial1"))
-		
+
 		idUpgRare = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.RareMaterial2"))
 		idUpgEpic = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.EpicMaterial2"))
 		idUpgLegendary = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.LegendaryMaterial2"))
-		
+
 		idQHUncommon = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.QuickHackUncommonMaterial1"))
 		idQHRare = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.QuickHackRareMaterial1"))
 		idQHEpic = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.QuickHackEpicMaterial1"))
 		idQHLegendary = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.QuickHackLegendaryMaterial1"))
-		
+
 		if useFullWait then idToken = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Keycards.test_keycard")) end
-		
+
 		if showActiveMsg then print("Auto Component Upgrade activated.") end
 	end
-	
+
 	setDevData()
 	if checkSkills() then
 		skillTuneUp()
@@ -129,7 +129,7 @@ registerForEvent("onUpdate", function(deltaTime)
 		else upgCost = useOptimization and skillCost(upgRatio) or upgRatio end
 	end
 	if requireTuneUp and not tuneUp then return end
-	
+
 	if useFullWait then
 		if checkFreeze() or checkJunk() then fullWait() return end
 		if not usingAutoControl and fullWait(deltaTime) then return end
@@ -142,14 +142,14 @@ registerForEvent("onUpdate", function(deltaTime)
 		if scriptInterval < autoConvertTime then return	else scriptInterval = 0	end
 	end
 ------------------------------------------------
--- GET CURRENT AMOUNTS 
+-- GET CURRENT AMOUNTS
 ------------------------------------------------
 	countCommon = ts:GetItemQuantity(player, idCommon)
 	countUncommon = ts:GetItemQuantity(player, idUncommon)
 	countRare = ts:GetItemQuantity(player, idRare)
 	countEpic = ts:GetItemQuantity(player, idEpic)
 	countLegendary = ts:GetItemQuantity(player, idLegendary)
-	
+
 	countUpgRare = ts:GetItemQuantity(player, idUpgRare)
 	countUpgEpic = ts:GetItemQuantity(player, idUpgEpic)
 	countUpgLegendary = ts:GetItemQuantity(player, idUpgLegendary)
@@ -178,7 +178,7 @@ registerForEvent("onUpdate", function(deltaTime)
 				Game.AddToInventory("Items.UncommonMaterial1", upgResult)
 				countUncommon = countUncommon + upgResult
 				gainedXP = xpUncommon * upgResult
-				
+
 				msg = msg..upgOriginal.." Common > "..upgResult.." Uncommon"
 				msgFlag = true
 			end
@@ -192,7 +192,7 @@ registerForEvent("onUpdate", function(deltaTime)
 					Game.AddToInventory("Items.RareMaterial1", upgResult)
 					countRare = countRare + upgResult
 					gainedXP = gainedXP + xpRare * upgResult
-					
+
 					if msgFlag then
 						msg = msg.."; "
 					end
@@ -209,7 +209,7 @@ registerForEvent("onUpdate", function(deltaTime)
 						Game.AddToInventory("Items.EpicMaterial1", upgResult)
 						countEpic = countEpic + upgResult
 						gainedXP = gainedXP + xpEpic * upgResult
-						
+
 						if msgFlag then
 							msg = msg.."; "
 						end
@@ -225,7 +225,7 @@ registerForEvent("onUpdate", function(deltaTime)
 							ts:RemoveItem(player, idEpic, upgOriginal)
 							Game.AddToInventory("Items.LegendaryMaterial1", upgResult)
 							gainedXP = gainedXP + xpLegendary * upgResult
-							
+
 							if msgFlag then
 								msg = msg.."; "
 							end
@@ -276,7 +276,7 @@ registerForEvent("onUpdate", function(deltaTime)
 				Game.AddToInventory("Items.EpicMaterial2", upgResult)
 				countUpgEpic = countUpgEpic + upgResult
 				gainedXP = xpEpic * upgResult
-				
+
 				if msgFlag then
 					msg = msg.."; "
 				end
@@ -292,7 +292,7 @@ registerForEvent("onUpdate", function(deltaTime)
 					ts:RemoveItem(player, idUpgEpic, upgOriginal)
 					Game.AddToInventory("Items.LegendaryMaterial2", upgResult)
 					gainedXP = gainedXP + xpLegendary * upgResult
-					
+
 					if msgFlag then
 						msg = msg.."; "
 					end
@@ -314,12 +314,12 @@ registerForEvent("onUpdate", function(deltaTime)
 			gainedXP = math.floor( xpFactor * gainedXP )
 			Game.AddExp("Crafting", gainedXP)
 		end
-		
+
 		if msgFlag and showConvertMsg then
 			print(msg)
 		end
 	end
-	
+
 ------------------------------------------------
 -- QUICKHACK COMPONENTS
 ------------------------------------------------
@@ -337,7 +337,7 @@ registerForEvent("onUpdate", function(deltaTime)
 				Game.AddToInventory("Items.QuickHackRareMaterial1", upgResult)
 				countQHRare = countQHRare + upgResult
 				gainedXP = gainedXP + xpRare * upgResult
-				
+
 				msg = msg..upgOriginal.." Uncommon > "..upgResult.." Rare"
 				msgFlag = true
 			end
@@ -351,7 +351,7 @@ registerForEvent("onUpdate", function(deltaTime)
 					Game.AddToInventory("Items.QuickHackEpicMaterial1", upgResult)
 					countQHEpic = countQHEpic + upgResult
 					gainedXP = gainedXP + xpEpic * upgResult
-					
+
 					if msgFlag then
 						msg = msg.."; "
 					end
@@ -367,7 +367,7 @@ registerForEvent("onUpdate", function(deltaTime)
 						ts:RemoveItem(player, idQHEpic, upgOriginal)
 						Game.AddToInventory("Items.QuickHackLegendaryMaterial1", upgResult)
 						gainedXP = gainedXP + xpLegendary * upgResult
-						
+
 						if msgFlag then
 							msg = msg.."; "
 						end
@@ -404,11 +404,11 @@ end)
 ------------------------------------------------
 function getUpgraded(count, limit)
 	local result, original = 0, 0
-	if useAltCost then 
-		result, original = getUpgradedAlt(count, limit) 
+	if useAltCost then
+		result, original = getUpgradedAlt(count, limit)
 	else
 		local upg = limit + upgCost
-		
+
 		while count >= upg do
 			result = result + 1
 			if not skillNihilo() then original = original + upgCost; count = count - upgCost end
@@ -424,7 +424,7 @@ do
 	function getUpgradedAlt(count, limit)
 		local result, original = 0, 0
 		local upg = limit + upgCost
-		
+
 		while count >= upg do
 			local altCost = 0
 			for i = 1, upgCost do
@@ -442,7 +442,7 @@ do
 	function calcFreeChance()
 		freeChance = ss:GetStatValue(plID, "CraftingCostReduction")
 		if plDevData:HasPerk("Crafting_Area_06_Perk_1") then freeChance = freeChance + 0.2 end
-		
+
 		if prevChance ~= freeChance then
 			local msg = "AutoComponentUpgrade: Free Component Chance "
 			if prevChance == nil then msg = msg .. "currently " else msg = msg .. "now " end
@@ -458,12 +458,12 @@ end
 do
 	local prevPerkPoints = 0
 	local prevCraftingLevel = 0
-	
+
 	function checkSkills()
 		local check = false
 		local craftingLevel = plDevData:GetProficiencyLevel("Crafting")
 		if craftingLevel ~= prevCraftingLevel then prevCraftingLevel = craftingLevel; check = true end
-		
+
 		local perkPoints = plDevData:GetDevPoints('Primary')
 		if perkPoints < prevPerkPoints then check = true end
 		prevPerkPoints = perkPoints
@@ -481,7 +481,7 @@ do
 			xpFactor = (tuneUp and xpTuneUp) or xpFactor
 			local msg
 			if requireTuneUp then
-				if tuneUp then 
+				if tuneUp then
 					print("AutoComponentUpgrade: Tune-Up available to the character. Auto Component Upgrading is enabled.")
 					msg = "AutoComponentUpgrade:"
 				else
@@ -494,7 +494,7 @@ do
 					msg = "AutoComponentUpgrade: Tune-Up not detected."
 				end
 			end
-			if msg then 
+			if msg then
 				msg = msg .. " Auto Crafting XP set to ".. xpFactor * 100 .."%."
 				print(msg)
 			end
@@ -522,7 +522,7 @@ end
 -- 15% at 1st rank;  30% at 2nd rank
 ------------------------------------------------
 --[[
- Cost Fix 
+ Cost Fix
 Game gives ~0.5% cost reduction per Crafting level but states +5% at lvls 3, 4, and 11
 so, compromise: give 1 reduction at lvl 8, 2 reduction at lvl 17)
 i.e. with the 0.5% per level provided already by the game, net is: +7% at lvl 8, and +12% at lvl 17
@@ -536,7 +536,7 @@ function skillCost(cost)
 		if currentCraftingLevel >= 17 then reduct = reduct + 0.12
 		elseif currentCraftingLevel >= 8 then reduct = reduct + 0.07 end
 	end
-	
+
 	cost = cost - math.floor(cost * reduct)
 	return cost
 end
@@ -552,13 +552,13 @@ do
 	function fullWait(deltaTime)
 		if not itemCashID then itemCashID = GetSingleton("gameItemID"):FromTDBID(TweakDBID.new("Items.money")) end
 		local currentCash = ts:GetItemQuantity(player, itemCashID)
-		
+
 		local currentInv = ts:GetTotalItemQuantity(player) - currentCash + getAmmo()
 		if oldInv == 0 then oldInv = currentInv end
-		
+
 		if currentInv > oldInv then waitPause = timeFullWait end
 		oldInv = currentInv
-		
+
 		if deltaTime == nil then waitPause = 0; scriptInterval = autoConvertTime; end
 		if waitPause > 0 then
 			waitPause = waitPause - deltaTime
@@ -567,7 +567,7 @@ do
 			return false
 		end
 	end
-	
+
 	function getAmmo()
 		return Game.GetQuestsSystem():GetFactStr("SenseiAutoAmmoSell_Tokens")
 	end
@@ -587,11 +587,11 @@ registerForEvent("onInit", function()
 	Observe("PlayerPuppet", "OnCombatStateChanged", function(self,state)
 		inCombat = state == 1
 	end)
-	
+
 	GameUI.Observe(function(state)
 		paused = not state.isDefault or state.isJohnny
 	end)
-	
+
 	player = Game.GetPlayerSystem():GetLocalPlayerMainGameObject()
 	plID = Game.GetPlayer():GetEntityID()
 	ts = Game.GetTransactionSystem()
