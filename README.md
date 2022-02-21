@@ -1,19 +1,22 @@
 # CP77 Mods and Configs
 
-Collection of my mods and custom configurations.
-
-**Note:** Lists may be incomplete.
+Collection of my mods and custom configurations. **Note:** List may be incomplete.
 
 ## Tools
-- **Cyber Engine Tweaks** for game version 1.5 v2-107
-- **redscript** 0.5.0
+- [Cyber Engine Tweaks](https://www.nexusmods.com/cyberpunk2077/mods/107)
+- [redscript](https://www.nexusmods.com/cyberpunk2077/mods/1511)
 
-## Mods (scripts)
-- Appearance Change Unlocker
-- Armor Fix for All Weapons
-- Hide Read Shards
-- Improved Minimap Zoom
-- Limited HUD
+## Mods
+- [Auto Component Upgrade](https://www.nexusmods.com/cyberpunk2077/mods/2264)
+- [Auto Med Upgrade](https://www.nexusmods.com/cyberpunk2077/mods/2248)
+- [AutoHeal](https://www.nexusmods.com/cyberpunk2077/mods/2148)
+- [Disable Loading Cinematics](https://www.nexusmods.com/cyberpunk2077/mods/3105)
+- [Drive It Like You Stole It](https://www.nexusmods.com/cyberpunk2077/mods/348)
+- [Appearance Change Unlocker](https://www.nexusmods.com/cyberpunk2077/mods/3850)
+- [Armor Fix for All Weapons](https://www.nexusmods.com/cyberpunk2077/mods/2834)
+- [Hide Read Shards](https://www.nexusmods.com/cyberpunk2077/mods/2820)
+- [Improved Minimap Zoom](https://www.nexusmods.com/cyberpunk2077/mods/2959)
+- [Limited HUD](https://www.nexusmods.com/cyberpunk2077/mods/2592) and [optional extras](https://www.nexusmods.com/cyberpunk2077/mods/2592?tab=files)
     - Dialog Widget Resizer
     - Hide Speedometer
     - Improved Minimap Zoom Patch
@@ -21,21 +24,12 @@ Collection of my mods and custom configurations.
     - No Marker Pulse
     - Objects Coloring
     - Remove Crouch Indicator
-- Muted Markers
-- Non-Lethal Blunt Weapons
-- quietMenus
-- True Hidden Everything
-
-## Mods (CET)
-- Auto Component Upgrade
-- Auto Med Upgrade
-- Auto Heal
-- Disable Loading Cinematics
-- Native Settings UI 1.4
-- Quest Untracker
-- Simple XP Multiplier
-- Skip Main Menu
-- True Hide Armor
-- Vehicle Customizer
-
-No direct links/attributions yet but most or all should be searchable by name at [Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/).
+- [Muted Markers](https://www.nexusmods.com/cyberpunk2077/mods/1727)
+- [Native Settings UI](https://www.nexusmods.com/cyberpunk2077/mods/3518)
+- [Non-Lethal Blunt Weapons](https://www.nexusmods.com/cyberpunk2077/mods/3195)
+- [Quest Untracker](https://www.nexusmods.com/cyberpunk2077/mods/3154)
+- [Quiet Menus](https://www.nexusmods.com/cyberpunk2077/mods/3678)
+- [Simple XP Multiplier](https://www.nexusmods.com/cyberpunk2077/mods/3136)
+- [Skip Main Menu](https://www.nexusmods.com/cyberpunk2077/mods/2437)
+- [True Hidden Everything](https://www.nexusmods.com/cyberpunk2077/mods/2206)
+- [Vehicle Customizer](https://www.nexusmods.com/cyberpunk2077/mods/3689)
