@@ -25,18 +25,14 @@ Collection of my mods and custom configurations.
 - Non-Lethal Blunt Weapons
 - quietMenus
 - True Hidden Everything
-- You CAN Save Right Now
 
 ## Mods (CET)
 - Auto Component Upgrade
 - Auto Med Upgrade
-- AutoHeal
+- Auto Heal
 - Disable Loading Cinematics
-- Immersive First Person
-- JB Third Person Mod
 - Native Settings UI 1.4
 - Quest Untracker
-- Relic Be Gone
 - Simple XP Multiplier
 - Skip Main Menu
 - True Hide Armor
