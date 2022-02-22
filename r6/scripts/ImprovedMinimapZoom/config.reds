@@ -16,13 +16,13 @@ public class ZoomConfig {
 
   // Zoom value for active combat mode
   public static func Combat() -> Int32 = 60
-  
+
   // Zoom value for quest areas
   public static func QuestArea() -> Int32 = 40
-  
+
   // Zoom value for restricted and dangerous areas
   public static func SecurityArea() -> Int32 = 60
-  
+
   // Zoom value for interiors
   public static func Interior() -> Int32 = 40
 
@@ -40,10 +40,10 @@ public class ZoomConfig {
   // starts and stops, and MinZoom and MaxZoom values define zoom range itself
 
   // Minimal zoom value
-  public static func MinZoom() -> Int32 = 80
+  public static func MinZoom() -> Int32 = 90
 
   // Maximal zoom value
-  public static func MaxZoom() -> Int32 = 140
+  public static func MaxZoom() -> Int32 = 180
 
   // Speed threshold when zoom will start increasing from MinZoom
   public static func MinSpeed() -> Int32 = 20
@@ -53,13 +53,13 @@ public class ZoomConfig {
 
   // -- MINIMAP PEEK HOTKEY CONFIG
 
-  // -- Check included how-to guide and add hotkey definition to the game 
+  // -- Check included how-to guide and add hotkey definition to the game
   //    config files if you wan to use it
 
   // Non-vehicle zoom increment value for peek mode
   public static func Peek() -> Int32 = 40
 
-  // By default hotkey zooms minimap while you hold it and 
+  // By default hotkey zooms minimap while you hold it and
   // resets zoom when you release it, replace false with true here
   // if you want to replace hold to zoom behavior with toggle by keypress
   public static func ReplaceHoldWithToggle() -> Bool = false
