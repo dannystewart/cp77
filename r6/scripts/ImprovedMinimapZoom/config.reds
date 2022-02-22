@@ -15,20 +15,20 @@ public class ZoomConfig {
   //    Vehicle = 100
 
   // Zoom value for active combat mode
-  public static func Combat() -> Int32 = 60
+  public static func Combat() -> Int32 = 70
 
   // Zoom value for quest areas
   public static func QuestArea() -> Int32 = 40
 
   // Zoom value for restricted and dangerous areas
-  public static func SecurityArea() -> Int32 = 60
+  public static func SecurityArea() -> Int32 = 70
 
   // Zoom value for interiors
   public static func Interior() -> Int32 = 40
 
   // Zoom value for remained cases:
   // not in interior, not in vehicle, not in security area, no active combat
-  public static func Exterior() -> Int32 = 60
+  public static func Exterior() -> Int32 = 70
 
   // -- VEHICLE MINIMAP CONFIG --
 
