@@ -1,1 +1,0 @@
-// File was kept for mods compatibility, you can delete it if you read this
