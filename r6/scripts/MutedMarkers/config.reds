@@ -12,15 +12,15 @@ public class LootConfig {
   // Visibility for Legendary items (gold)
   public static func Legendary() -> MarkerVisibility = MarkerVisibility.ThroughWalls
   // Visibility for Epic items (purple)
-  public static func Epic() -> MarkerVisibility = MarkerVisibility.LineOfSight
+  public static func Epic() -> MarkerVisibility = MarkerVisibility.ThroughWalls
   // Visibility for Rate items (blue)
   public static func Rare() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Uncommon items (green)
   public static func Uncommon() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Common items (white)
-  public static func Common() -> MarkerVisibility = MarkerVisibility.Scanner
+  public static func Common() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Shards
-  public static func Shards() -> MarkerVisibility = MarkerVisibility.Scanner
+  public static func Shards() -> MarkerVisibility = MarkerVisibility.LineOfSight
 }
 
 public class WorldConfig {
