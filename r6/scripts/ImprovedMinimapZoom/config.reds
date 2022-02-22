@@ -49,7 +49,7 @@ public class ZoomConfig {
   public static func MinSpeed() -> Int32 = 20
 
   // Speed threshold when zoom will reach the value from MaxZoom
-  public static func MaxSpeed() -> Int32 = 120
+  public static func MaxSpeed() -> Int32 = 130
 
   // -- MINIMAP PEEK HOTKEY CONFIG
 
