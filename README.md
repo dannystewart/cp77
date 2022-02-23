@@ -45,6 +45,6 @@ Collection of mods and custom configurations.
 
 ## Note
 
-This list is only updated intermittently. Check recent commits to see if anything's been added since last update.
+This list is only updated intermittently and may be incomplete. Check recent commits to see if anything's been added since last update.
 
 Last updated 2022-02-22
