@@ -22,32 +22,32 @@ public class DisassemblyResultMultiplierMod {
 
         // Base multiplier for all received materials.
         // Default = 1.0
-        settings.materialsMultiplierBase = 1.2;
+        settings.materialsMultiplierBase = 1.5;
 
         // Common materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierCommon = 1.2;
+        settings.materialsMultiplierCommon = 1.0;
 
         // Uncommon materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierUncommon = 1.4;
+        settings.materialsMultiplierUncommon = 1.5;
 
         // Rare materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierRare = 1.6;
+        settings.materialsMultiplierRare = 3.0;
 
         // Epic materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierEpic = 1.8;
+        settings.materialsMultiplierEpic = 4.0;
 
         // Legendary materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierLegendary = 2.0;
+        settings.materialsMultiplierLegendary = 5.0;
 
         // Chance to reveive materials that are one quality up of the disassembled item.
         // The dice roll from that perk happens before this one. The chance in that perk is 0.15 (15%).
         // Default = 0.0;
-        settings.chanceToAddMaterialsOneQualityUp = 0.15;
+        settings.chanceToAddMaterialsOneQualityUp = 0.50;
 
         // ------ Settings End ------
 
