@@ -4,6 +4,7 @@
 !.gitignore
 !*.code-workspace
 !*.json
+launcher-configuration.json
 !README.md
 *.cache
 *.exe
