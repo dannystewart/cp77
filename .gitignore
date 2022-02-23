@@ -2,6 +2,9 @@
 /Cyberpunk2077.exe*
 /REDEngineErrorReporter.exe*
 !.gitignore
+!*.code-workspace
+!*.json
+!README.md
 *.cache
 *.exe
 *.log
@@ -10,7 +13,6 @@
 **/cache
 **/log
 archive/pc/content
-archive/pc/mod_disabled
 bin/x64/*.*
 !bin/x64/dxgi.dll
 !bin/x64/*.ini
