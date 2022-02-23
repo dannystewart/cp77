@@ -8,6 +8,7 @@ launcher-configuration.json
 !README.md
 *.cache
 *.exe
+!engine/tools/scc.exe
 *.log
 *.sqlite3
 **/.DS_Store
