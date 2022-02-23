@@ -26,11 +26,11 @@ public class DisassemblyResultMultiplierMod {
 
         // Common materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierCommon = 1.0;
+        settings.materialsMultiplierCommon = 2.0;
 
         // Uncommon materials multiplier.
         // Default = 1.0;
-        settings.materialsMultiplierUncommon = 1.5;
+        settings.materialsMultiplierUncommon = 2.5;
 
         // Rare materials multiplier.
         // Default = 1.0;
