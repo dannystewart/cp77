@@ -26,6 +26,7 @@ Collection of mods and custom configurations.
 - [Non-Lethal Blunt Weapons](https://www.nexusmods.com/cyberpunk2077/mods/3195)
 - [Quest Untracker](https://www.nexusmods.com/cyberpunk2077/mods/3154)
 - [Quiet Menus](https://www.nexusmods.com/cyberpunk2077/mods/3678)
+- [Ragdoll Physics Overhaul](https://www.nexusmods.com/cyberpunk2077/mods/3858)
 - [Restore Crowd Finishers](https://www.nexusmods.com/cyberpunk2077/mods/2277)
 - [Simple XP Multiplier](https://www.nexusmods.com/cyberpunk2077/mods/3136)
 - [Skip Main Menu](https://www.nexusmods.com/cyberpunk2077/mods/2437)
