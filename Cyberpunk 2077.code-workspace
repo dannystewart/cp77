@@ -1,37 +1,37 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.exclude": {
-			"**/.git": true,
-			"**/.svn": true,
-			"**/.hg": true,
-			"**/CVS": true,
-			"**/.DS_Store": true,
-			"**/Thumbs.db": true,
-			"**/.pytest_cache": true,
-			"**/.vscode": true,
-			"**/__pycache__": true,
-			"**/node_modules": true,
-			"*.sublime-*": true,
-			"env*": true,
-			"venv": true,
-			"**/*.dll": true,
-			"**/*.exe": true,
-			"BonusContent": true,
-			"bin\\x64/CrashReporter": true,
-			"bin\\x64/d3d12on7": true,
-			"*.txt": true,
-			"cache": true,
-			"r6/cache": true,
-			"**/*.cache": true,
-			"engine/tools": true,
-			"**/LICENSE": true,
-			"archive\\pc/content": true
-		},
-		"explorerExclude.backup": null
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "explorerExclude.backup": null,
+        "files.exclude": {
+            "**/*.cache": true,
+            "**/*.dll": true,
+            "**/*.exe": true,
+            "**/.DS_Store": true,
+            "**/.git": true,
+            "**/.hg": true,
+            "**/.pytest_cache": true,
+            "**/.svn": true,
+            "**/.vscode": true,
+            "**/CVS": true,
+            "**/LICENSE": true,
+            "**/Thumbs.db": true,
+            "**/__pycache__": true,
+            "**/node_modules": true,
+            "*.sublime-*": true,
+            "*.txt": true,
+            "BonusContent": true,
+            "archive\\pc/content": true,
+            "bin\\x64/CrashReporter": true,
+            "bin\\x64/d3d12on7": true,
+            "cache": true,
+            "engine/tools": true,
+            "env*": true,
+            "r6/cache": true,
+            "venv": true
+        }
+    }
 }
