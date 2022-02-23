@@ -1,5 +1,6 @@
 {
-  "E3HudCompatibilityMode":false,
+  "numSlots":0,
+  "fadeInDuration":2,
   "slots":[
     {
       "grenadeCycle":true,
@@ -162,9 +163,10 @@
       "holdModifier":"QuickMelee"
     }
   ],
+  "E3HudCompatibilityMode":false,
   "slotOpacityWhileSubtitlesOnScreen":0,
-  "numSlots":0,
-  "defaultSlotOpacity":1,
   "hideEmptyConsumableSlots":false,
+  "defaultSlotOpacity":1,
+  "fadeInDelay":1.5,
   "hideEmptyCyberwareAbilitySlots":true
 }
