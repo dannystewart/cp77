@@ -36,6 +36,12 @@ private func DefaultSlotOpacity() -> Float {}
 private func SlotOpacityWhileSubtitlesOnScreen() -> Float {}
 
 @addMethod(HotkeysWidgetController)
+private func SlotFadeInDelay() -> Float {}
+
+@addMethod(HotkeysWidgetController)
+private func SlotFadeInDuration() -> Float {}
+
+@addMethod(HotkeysWidgetController)
 private func IsE3HudCompatibilityMode() -> Bool {}
 
 @addMethod(HotkeysWidgetController)
@@ -95,9 +101,10 @@ private func AddCustomQuickslots() -> Void {
   let alphaInterpolator: ref<inkAnimTransparency> = new inkAnimTransparency();
   alphaInterpolator.SetStartTransparency(this.SlotOpacityWhileSubtitlesOnScreen());
   alphaInterpolator.SetEndTransparency(this.DefaultSlotOpacity());
-  alphaInterpolator.SetDuration(3.0);
+  alphaInterpolator.SetDuration(this.SlotFadeInDuration());
   alphaInterpolator.SetType(inkanimInterpolationType.Linear);
   alphaInterpolator.SetMode(inkanimInterpolationMode.EasyIn);
+  alphaInterpolator.SetStartDelay(this.SlotFadeInDelay());
   this.m_CustomHotkeyHideAnim.AddInterpolator(alphaInterpolator);
 
   this.m_player.GetCustomHotkeyPlayerButtonData().SetModifiers(modifiersForDpadLeft, modifiersForDpadRight, modifiersForDpadUp, modifiersForDpadDown);

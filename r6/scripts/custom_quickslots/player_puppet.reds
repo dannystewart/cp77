@@ -206,6 +206,7 @@ public class CustomHotkeysConsumablesInventory extends InventoryScriptCallback {
   private let grenades: array<array<array<ItemID>>>;
   private let player: wref<PlayerPuppet>;
   private let itemQualityMap: ref<inkIntHashMap>;
+  private let setupComplete: Bool;
 
   public func Setup(player: ref<PlayerPuppet>, items: array<ItemID>) -> Void {
     this.player = player;
@@ -214,6 +215,7 @@ public class CustomHotkeysConsumablesInventory extends InventoryScriptCallback {
     for item in items {
       this.addItem(item);
     }
+    this.setupComplete = true;
   }
 
   public func GetItemQuality(item: ItemID) -> Int32 {
@@ -222,6 +224,10 @@ public class CustomHotkeysConsumablesInventory extends InventoryScriptCallback {
 
   public func CycleGrenade(type: CustomQuickslotItemType, currentItem: ItemID) -> ItemID {
     let emptyItem: ItemID;
+    if !this.setupComplete {
+      return emptyItem;
+    }
+
     let index: Int32 = this.GetGrenadeArrayIndexByItemType(type);
     if index == -1 {
       return emptyItem;
@@ -234,14 +240,13 @@ public class CustomHotkeysConsumablesInventory extends InventoryScriptCallback {
 
     let nextQuality: Int32 = (currentQuality + 1) % ArraySize(this.grenades[index]);
     let firstCheckedQuality: Int32 = nextQuality;
-    let checkedAll = false;
-    while !checkedAll {
+    while true {
       if ArraySize(this.grenades[index][nextQuality]) > 0 {
         return this.grenades[index][nextQuality][0];
       }
       nextQuality = (nextQuality + 1) % ArraySize(this.grenades[index]);
       if nextQuality == firstCheckedQuality {
-        checkedAll = true;
+        break;
       }
     }
 
@@ -269,6 +274,10 @@ public class CustomHotkeysConsumablesInventory extends InventoryScriptCallback {
 
   public func GetGrenadeWithPreferredQuality(type: CustomQuickslotItemType, grenadeQuality: GrenadeQuality) -> ItemID {
     let emptyItem: ItemID;
+    if !this.setupComplete {
+      return emptyItem;
+    }
+
     let index: Int32 = this.GetGrenadeArrayIndexByItemType(type);
     if index == -1 {
       return emptyItem;
@@ -282,15 +291,18 @@ public class CustomHotkeysConsumablesInventory extends InventoryScriptCallback {
       quality = ArraySize(this.grenades[index]) - 1;
     }
 
+    if quality == -1 {
+      return emptyItem;
+    }
+
     let startQuality: Int32 = quality;
-    let checkedAll: Bool = false;
-    while !checkedAll {
+    while true {
       if ArraySize(this.grenades[index][quality]) > 0 {
         return this.grenades[index][quality][0];
       }
       quality = (quality + 1) % ArraySize(this.grenades[index]);
       if quality == startQuality {
-        checkedAll = true;
+        break;
       }
     }
     return emptyItem;

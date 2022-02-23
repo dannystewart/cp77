@@ -22,6 +22,8 @@ local settings = {
   hideEmptyCyberwareAbilitySlots = true,
   defaultSlotOpacity = 1.0,
   slotOpacityWhileSubtitlesOnScreen = 0.0,
+  fadeInDelay = 1.5,
+  fadeInDuration = 2.0,
   numSlots = 10,
   slots = {
     [1] = {
@@ -201,6 +203,14 @@ registerForEvent("onInit", function()
     return settings.slotOpacityWhileSubtitlesOnScreen
   end)
 
+  Override("HotkeysWidgetController", "SlotFadeInDelay", function(_)
+    return settings.fadeInDelay
+  end)
+
+  Override("HotkeysWidgetController", "SlotFadeInDuration", function(_)
+    return settings.fadeInDuration
+  end)
+
   Override("HotkeysWidgetController", "IsE3HudCompatibilityMode", function(_)
     return settings.E3HudCompatibilityMode
   end)
@@ -369,7 +379,7 @@ function SetupMenu()
   table.insert(topOptions, option)
 
   -- Parameters: path, label, desc, min, max, step, format, currentValue, defaultValue, callback, optionalIndex
-  option = nativeSettings.addRangeFloat("/CustomQuickslots", "Default slot opacity", "Opacity of quickslots most of time", 0.0, 1.0, 0.01, "%.2f", settings.defaultSlotOpacity, defaults.defaultSlotOpacity, function(value)
+  option = nativeSettings.addRangeFloat("/CustomQuickslots", "Default slot opacity", "Normal opacity of quickslots", 0.0, 1.0, 0.01, "%.2f", settings.defaultSlotOpacity, defaults.defaultSlotOpacity, function(value)
     settings.defaultSlotOpacity = value
     settingsModified = true
   end)
@@ -377,6 +387,18 @@ function SetupMenu()
 
   option = nativeSettings.addRangeFloat("/CustomQuickslots", "Slot opacity while subtitles on screen", "Opacity of quickslots while in conversation", 0.0, 1.0, 0.01, "%.2f", settings.slotOpacityWhileSubtitlesOnScreen, defaults.slotOpacityWhileSubtitlesOnScreen, function(value)
     settings.slotOpacityWhileSubtitlesOnScreen = value
+    settingsModified = true
+  end)
+  table.insert(topOptions, option)
+
+  option = nativeSettings.addRangeFloat("/CustomQuickslots", "Slot fade in delay", "Delay before fading in slots after subtitles leave screen", 0.0, 5.0, 0.25, "%.2f", settings.fadeInDelay, defaults.fadeInDelay, function(value)
+    settings.fadeInDelay = value
+    settingsModified = true
+  end)
+  table.insert(topOptions, option)
+
+  option = nativeSettings.addRangeFloat("/CustomQuickslots", "Slot fade in duration", "Duration of slot fade in after subtitles leave screen (and after delay)", 0.0, 5.0, 0.25, "%.2f", settings.fadeInDuration, defaults.fadeInDuration, function(value)
+    settings.fadeInDuration = value
     settingsModified = true
   end)
   table.insert(topOptions, option)
@@ -415,7 +437,7 @@ function BuildSubCategories(nativeSettings, startSlot, endSlot)
     -- Parameters: path, label, desc, elements, currentValue, defaultValue, callback, optionalIndex
     nativeSettings.addSelectorString("/CustomQuickslots/quickslot" .. i, "Type", "Choose what kind of item this slot holds", GetLocalizedSlotTypes(), slotTypeIndex, IndexOf(slotTypes, defaults.slots[i].type), function(value)
       settingsModified = true
-      local oldValue = IndexOf(slotTypes, settings.slots[i].type)
+      -- local oldValue = IndexOf(slotTypes, settings.slots[i].type)
       settings.slots[i].type = slotTypes[value]
       --if oldValue >= 14 then
         RemoveGrenadeSpecificOptions(nativeSettings, i)
