@@ -103,7 +103,7 @@ public class PlayerHealthbarModuleConfig {
   public static func IsEnabled() -> Bool = true
   public static func BindToGlobalHotkey() -> Bool = false
   // Default in-game visibility conditions
-  public static func ShowWhenHealthNotFull() -> Bool = true
+  public static func ShowWhenHealthNotFull() -> Bool = false
   public static func ShowWhenMemoryNotFull() -> Bool = true
   public static func ShowWhenBuffsActive() -> Bool = false
   public static func ShowWhenQuickhacksActive() -> Bool = true
