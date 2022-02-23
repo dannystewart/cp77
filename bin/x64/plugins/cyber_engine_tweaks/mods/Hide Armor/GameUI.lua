@@ -1,10 +1,13 @@
 --[[
 GameUI.lua
 Reactive Game UI State Observer
+
 Copyright (c) 2021 psiberx
+
 How to use:
 ```
 local GameUI = require('GameUI')
+
 registerForEvent('onInit', function()
 	GameUI.Listen(function(state)
 		GameUI.PrintState(state)

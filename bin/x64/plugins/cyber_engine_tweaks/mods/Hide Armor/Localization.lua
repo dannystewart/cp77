@@ -14,6 +14,7 @@ languagesShort['pl-pl'] = 3
 languagesShort['fr-fr'] = 4
 languagesShort['ru-ru'] = 5
 languagesShort['zh-tw'] = 6
+languagesShort['pt-br'] = 7
 
 Localization.Categories = {}
 Localization.Names = {}
@@ -22,7 +23,6 @@ Localization.Descriptions = {}
 -- English
 Localization.Categories[languagesShort['en-us']] = {}
 Localization.Categories[languagesShort['en-us']]['Visibility'] = "Clothes Visibility"
-Localization.Categories[languagesShort['en-us']]['Disabled'] = "Visibility is disabled right now"
 Localization.Categories[languagesShort['en-us']]['Preferences'] = "Preferences"
 
 Localization.Names[languagesShort['en-us']] = {}
@@ -33,7 +33,7 @@ Localization.Names[languagesShort['en-us']]['InnerChest'] = "Inner Torso"
 Localization.Names[languagesShort['en-us']]['Legs'] = "Legs"
 Localization.Names[languagesShort['en-us']]['Feet'] = "Feet"
 Localization.Names[languagesShort['en-us']]['Outfit'] = "Outfit"
-Localization.Names[languagesShort['en-us']]['Language'] = "Language"
+Localization.Names[languagesShort['en-us']]['Inventory'] = "Toggle in the UI"
 
 Localization.Descriptions[languagesShort['en-us']] = {}
 Localization.Descriptions[languagesShort['en-us']]['Head'] = "Controls visibility of the headgear"
@@ -43,12 +43,11 @@ Localization.Descriptions[languagesShort['en-us']]['InnerChest'] = "Controls vis
 Localization.Descriptions[languagesShort['en-us']]['Legs'] = "Controls visibility of the trouses"
 Localization.Descriptions[languagesShort['en-us']]['Feet'] = "Controls visibility of the footwear"
 Localization.Descriptions[languagesShort['en-us']]['Outfit'] = "Controls visibility of the outfit"
-Localization.Descriptions[languagesShort['en-us']]['Language'] = "Change this mod language"
+Localization.Descriptions[languagesShort['en-us']]['Inventory'] = "Experimental: Enables visibility toggle in the inventory UI"
 
 -- Polish
 Localization.Categories[languagesShort['pl-pl']] = {}
 Localization.Categories[languagesShort['pl-pl']]['Visibility'] = "Widoczność ubrań"
-Localization.Categories[languagesShort['pl-pl']]['Disabled'] = "Widoczność jest teraz niedostępna"
 Localization.Categories[languagesShort['pl-pl']]['Preferences'] = "Preferencje"
 
 Localization.Names[languagesShort['pl-pl']] = {}
@@ -59,7 +58,7 @@ Localization.Names[languagesShort['pl-pl']]['InnerChest'] = "Tułów (odzież sp
 Localization.Names[languagesShort['pl-pl']]['Legs'] = "Nogi"
 Localization.Names[languagesShort['pl-pl']]['Feet'] = "Obuwie"
 Localization.Names[languagesShort['pl-pl']]['Outfit'] = "Strój"
-Localization.Names[languagesShort['pl-pl']]['Language'] = "Język"
+Localization.Names[languagesShort['pl-pl']]['Inventory'] = "Przełącznik w UI"
 
 Localization.Descriptions[languagesShort['pl-pl']] = {}
 Localization.Descriptions[languagesShort['pl-pl']]['Head'] = "Ustawia widoczność nakrycia głowy"
@@ -69,12 +68,11 @@ Localization.Descriptions[languagesShort['pl-pl']]['InnerChest'] = "Ustawia wido
 Localization.Descriptions[languagesShort['pl-pl']]['Legs'] = "Ustawia widoczność spodni"
 Localization.Descriptions[languagesShort['pl-pl']]['Feet'] = "Ustawia widoczność obuwia"
 Localization.Descriptions[languagesShort['pl-pl']]['Outfit'] = "Ustawia widoczność stroju"
-Localization.Descriptions[languagesShort['pl-pl']]['Language'] = "Zmienia język moda"
+Localization.Descriptions[languagesShort['pl-pl']]['Inventory'] = "Eksperymentalne: Dodaje przełącznik widoczności w UI ekwipunku"
 
 -- French
 Localization.Categories[languagesShort['fr-fr']] = {}
 Localization.Categories[languagesShort['fr-fr']]['Visibility'] = "Visibilité"
-Localization.Categories[languagesShort['fr-fr']]['Disabled'] = "La visibilité est actuellement désactivée"
 Localization.Categories[languagesShort['fr-fr']]['Preferences'] = "Préférences"
  
 Localization.Names[languagesShort['fr-fr']] = {}
@@ -85,7 +83,8 @@ Localization.Names[languagesShort['fr-fr']]['InnerChest'] = "Haut léger"
 Localization.Names[languagesShort['fr-fr']]['Legs'] = "Bas"
 Localization.Names[languagesShort['fr-fr']]['Feet'] = "Pieds"
 Localization.Names[languagesShort['fr-fr']]['Outfit'] = "Ensembles vestimentaires"
-Localization.Names[languagesShort['fr-fr']]['Language'] = "Langue"
+Localization.Names[languagesShort['fr-fr']]['Inventory'] = "Basculer dans l'interface"
+
  
 Localization.Descriptions[languagesShort['fr-fr']] = {}
 Localization.Descriptions[languagesShort['fr-fr']]['Head'] = "Contrôle la visibilité du couvre-chef"
@@ -95,12 +94,11 @@ Localization.Descriptions[languagesShort['fr-fr']]['InnerChest'] = "Contrôle la
 Localization.Descriptions[languagesShort['fr-fr']]['Legs'] = "Contrôle la visibilité du pantalon/short"
 Localization.Descriptions[languagesShort['fr-fr']]['Feet'] = "Contrôle la visibilité des chaussures/bottes"
 Localization.Descriptions[languagesShort['fr-fr']]['Outfit'] = "Contrôle la visibilité du costumes"
-Localization.Descriptions[languagesShort['fr-fr']]['Language'] = "Change la langue de ce mod"
+Localization.Descriptions[languagesShort['fr-fr']]['Inventory'] = "Expérimental : Active le basculement de la visibilité dans l'interface d'inventaire"
 
 -- Russian
 Localization.Categories[languagesShort['ru-ru']] = {}
 Localization.Categories[languagesShort['ru-ru']]['Visibility'] = "Видимость"
-Localization.Categories[languagesShort['ru-ru']]['Disabled'] = "Отображение отключено"
 Localization.Categories[languagesShort['ru-ru']]['Preferences'] = "Настройки"
 
 Localization.Names[languagesShort['ru-ru']] = {}
@@ -111,7 +109,7 @@ Localization.Names[languagesShort['ru-ru']]['InnerChest'] = "Торс (низ)"
 Localization.Names[languagesShort['ru-ru']]['Legs'] = "Ноги"
 Localization.Names[languagesShort['ru-ru']]['Feet'] = "Ступни"
 Localization.Names[languagesShort['ru-ru']]['Outfit'] = "Наборы одежды"
-Localization.Names[languagesShort['ru-ru']]['Language'] = "Язык"
+Localization.Names[languagesShort['ru-ru']]['Inventory'] = "Кнопка в интерфейсе"
 
 Localization.Descriptions[languagesShort['ru-ru']] = {}
 Localization.Descriptions[languagesShort['ru-ru']]['Head'] = "Устанавливает видимость предмета в слоте головы"
@@ -121,12 +119,11 @@ Localization.Descriptions[languagesShort['ru-ru']]['InnerChest'] = "Устана
 Localization.Descriptions[languagesShort['ru-ru']]['Legs'] = "Устанавливает видимость предмета в слоте ног"
 Localization.Descriptions[languagesShort['ru-ru']]['Feet'] = "Устанавливает видимость предмета в слоте ступней"
 Localization.Descriptions[languagesShort['ru-ru']]['Outfit'] = "Устанавливает видимость предмета в слоте наборов одежды"
-Localization.Descriptions[languagesShort['ru-ru']]['Language'] = "Изменение языка мода"
+Localization.Descriptions[languagesShort['ru-ru']]['Inventory'] = "Экспериментально: включает переключатель видимости в интерфейсе инвентаря"
 
 -- Traditional Chinese
 Localization.Categories[languagesShort['zh-tw']] = {}
 Localization.Categories[languagesShort['zh-tw']]['Visibility'] = "顯示部位"
-Localization.Categories[languagesShort['zh-tw']]['Disabled'] = "已隱藏"
 Localization.Categories[languagesShort['zh-tw']]['Preferences'] = "偏好"
  
 Localization.Names[languagesShort['zh-tw']] = {}
@@ -137,7 +134,7 @@ Localization.Names[languagesShort['zh-tw']]['InnerChest'] = "上身內襯"
 Localization.Names[languagesShort['zh-tw']]['Legs'] = "腿部"
 Localization.Names[languagesShort['zh-tw']]['Feet'] = "腳部"
 Localization.Names[languagesShort['zh-tw']]['Outfit'] = "服裝組"
-Localization.Names[languagesShort['zh-tw']]['Language'] = "語言"
+Localization.Names[languagesShort['zh-tw']]['Inventory'] = "在界面切換"
  
 Localization.Descriptions[languagesShort['zh-tw']] = {}
 Localization.Descriptions[languagesShort['zh-tw']]['Head'] = "控制頭部裝備的顯示或隱藏"
@@ -147,57 +144,48 @@ Localization.Descriptions[languagesShort['zh-tw']]['InnerChest'] = "控制上身
 Localization.Descriptions[languagesShort['zh-tw']]['Legs'] = "控制腿部裝備的顯示或隱藏"
 Localization.Descriptions[languagesShort['zh-tw']]['Feet'] = "控制腳部裝備的顯示或隱藏"
 Localization.Descriptions[languagesShort['zh-tw']]['Outfit'] = "控制服裝組裝備的顯示或隱藏"
-Localization.Descriptions[languagesShort['zh-tw']]['Language'] = "變更模組語言"
+Localization.Descriptions[languagesShort['zh-tw']]['Inventory'] = "實驗性：在庫存界面中啟用可見性切換"
 
-Localization.supported = 5
-Localization.LanguagesList = {}
-Localization.LanguagesList['system'] = {[1] = "System", [2] = "English", [3] = "Polski", [4] = "Français", [5] = "Русский", [6] = "正體中文"}
-Localization.LanguagesList['en-us'] = {[1] = "System", [2] = "English", [3] = "Polish", [4] = "French", [5] = "Russian", [6] = "Chinese Traditional"}
-Localization.LanguagesList['pl-pl'] = {[1] = "Systemowy", [2] = "Angielski", [3] = "Polski", [4] = "Francuski", [5] = "Rosyjski", [6] = "Chiński Tradycyjny"}
-Localization.LanguagesList['fr-fr'] = {[1] = "Systémique", [2] = "Anglais", [3] = "Polonaise", [4] = "Français", [5] = "Russe", [6] = "Chinois traditionnel"}
-Localization.LanguagesList['ru-ru'] = {[1] = "Системный", [2] = "Английский", [3] = "Польский", [4] = "Французский", [5] = "Русский", [6] = "Традиционный китайский"}
-Localization.LanguagesList['zh-tw'] = {[1] = "系統語言", [2] = "英語", [3] = "波蘭語", [4] = "法語", [5] = "俄語", [6] = "正體中文"}
+-- Brazilian Portuguese
+Localization.Categories[languagesShort['pt-br']] = {}
+Localization.Categories[languagesShort['pt-br']]['Visibility'] = "Deseja exibir que equipamentos?"
+Localization.Categories[languagesShort['pt-br']]['Preferences'] = "Preferências"
 
-function Localization.Initialize ()
+Localization.Names[languagesShort['pt-br']] = {}
+Localization.Names[languagesShort['pt-br']]['Head'] = "Cabeça"
+Localization.Names[languagesShort['pt-br']]['Face'] = "Rosto"
+Localization.Names[languagesShort['pt-br']]['OuterChest'] = "Peitoral Externo"
+Localization.Names[languagesShort['pt-br']]['InnerChest'] = "Peitoral Interno"
+Localization.Names[languagesShort['pt-br']]['Legs'] = "Pernas"
+Localization.Names[languagesShort['pt-br']]['Feet'] = "Pés"
+Localization.Names[languagesShort['pt-br']]['Outfit'] = "Roupas Especiais"
+Localization.Names[languagesShort['pt-br']]['Inventory'] = "Mudar pelo Inventário?"
+
+Localization.Descriptions[languagesShort['pt-br']] = {}
+Localization.Descriptions[languagesShort['pt-br']]['Head'] = "Não será mais exibido nenhum capacete, chapéu, boné ou outras peças"
+Localization.Descriptions[languagesShort['pt-br']]['Face'] = "Não será mais exibido nenhuma máscara, óculos e outros acessórios"
+Localization.Descriptions[languagesShort['pt-br']]['OuterChest'] = "Não será mais exibido nenhuma jaqueta, casaco, colete ou outra roupa externa"
+Localization.Descriptions[languagesShort['pt-br']]['InnerChest'] = "Não será mais exibido nenhuma camisa, regata, trajes ou outra roupa interna"
+Localization.Descriptions[languagesShort['pt-br']]['Legs'] = "Não será mais exibido nenhuma calça, bermuda, saia ou outras peças de roupa"
+Localization.Descriptions[languagesShort['pt-br']]['Feet'] = "Não será mais exibido nenhum tênis, sandálias, botas ou outros calçados"
+Localization.Descriptions[languagesShort['pt-br']]['Outfit'] = "Deseja ocultar roupas especiais?"
+Localization.Descriptions[languagesShort['pt-br']]['Inventory'] = "Experimental: Torna possível alterar a visibilidade dos equipamentos diretamente pela aba de Inventário"
+
+function Localization.Initialize()
     GameLocale.Initialize()
 end
 
 function GetLanguageID(Language)
-
     if languagesShort[Language] then
         return languagesShort[Language]
     end
 
-    return 1
+    return 2
 end
 
-function Localization.GetLanguage(Real)
-	if not languageCurrent then
-		languageCurrent = 1
-
-		for row in db:rows("SELECT Hidden FROM Preferences WHERE Name = 'Language'") do
-			languageCurrent = row[1]
-		end
-	end
-
-	if languageCurrent == 0 then
-		Localization.SetLanguage(1)
-	end
-
-	if languageCurrent == 1 and not Real then
-		local current = GameLocale.GetInterfaceLanguage()
-		return GetLanguageID(current)
-	end
-
-	return languageCurrent
-end
-
-function Localization.SetLanguage(Value)
-	if Value ~= languageCurrent then
-		languageCurrent = Value
-		db:exec("UPDATE Preferences SET Hidden = ".. Value .."  WHERE Name = 'Language'")
-		db:exec("INSERT INTO Preferences VALUES(NULL, 'Language', ".. Value ..")")
-	end
+function Localization.GetLanguage()
+	local current = GameLocale.GetInterfaceLanguage()
+	return GetLanguageID(current)
 end
 
 function Localization.GetCategory(Language, Name)
@@ -205,33 +193,35 @@ function Localization.GetCategory(Language, Name)
         return Localization.Categories[Language][Name]
     end
 
-    return Localization.Categories[2][Name]
+    if not Localization.Categories[2][Name] then
+        return "_error_"
+    else
+        return Localization.Categories[2][Name]
+    end
 end
 
 function Localization.GetName(Language, Name)
-    if Localization.Categories[Language] and Localization.Names[Language][Name] then
+    if Localization.Names[Language] and Localization.Names[Language][Name] then
         return Localization.Names[Language][Name]
     end
 
-    return Localization.Names[2][Name]
+    if not Localization.Names[2][Name] then
+        return "_error_"
+    else
+        return Localization.Names[2][Name]
+    end
 end
 
 function Localization.GetDescription(Language, Name)
-    if Localization.Categories[Language] and Localization.Descriptions[Language][Name] then
+    if Localization.Descriptions[Language] and Localization.Descriptions[Language][Name] then
         return Localization.Descriptions[Language][Name]
     end
 
-    return Localization.Descriptions[2][Name]
-end
-
-function Localization.GetLanguagesList()
-    local current = GameLocale.GetInterfaceLanguage()
-
-    if not Localization.LanguagesList[current] then
-        return Localization.LanguagesList['system']
+    if not Localization.Descriptions[2][Name] then
+        return "_error_"
+    else
+        return Localization.Descriptions[2][Name]
     end
-
-    return Localization.LanguagesList[current]
 end
 
 return Localization
