@@ -49,6 +49,10 @@
           "detail": "Updated an existing mod"
         },
         {
+          "label": "remove",
+          "detail": "Removed a mod that was installed"
+        }
+        {
           "label": "config",
           "detail": "Custom configurations for myself"
         },
