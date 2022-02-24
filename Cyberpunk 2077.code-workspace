@@ -37,28 +37,32 @@
     "vscodeGitCommit.variables": {
       "feat": [
         {
-          "detail": "Updates to documentation, readme, notes, etc.",
-          "label": "docs"
+          "label": "docs",
+          "detail": "Updates to documentation, readme, notes, etc."
         },
         {
-          "detail": "Added a new mod",
-          "label": "new"
+          "label": "new",
+          "detail": "Added a new mod"
         },
         {
-          "detail": "Updated an existing mod",
-          "label": "update"
+          "label": "update",
+          "detail": "Updated an existing mod"
         },
         {
-          "detail": "Custom configurations for myself",
-          "label": "config"
+          "label": "config",
+          "detail": "Custom configurations for myself"
         },
         {
-          "detail": "Minor tweaks or files edited/written by the game",
-          "label": "tweaks"
+          "label": "tweaks",
+          "detail": "Minor tweaks or files edited/written by the game"
         },
         {
-          "detail": "Meta stuff pertaining to the repository itself",
-          "label": "meta"
+          "label": "fix",
+          "detail": "Something broke, and this should fix it"
+        },
+        {
+          "label": "meta",
+          "detail": "Meta stuff pertaining to the repository itself"
         }
       ]
     }
