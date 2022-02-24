@@ -10,7 +10,6 @@ launcher-configuration.json
 *.exe
 !engine/tools/scc.exe
 *.log
-*.sqlite3
 **/.DS_Store
 **/cache
 **/log
