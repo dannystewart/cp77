@@ -8,10 +8,12 @@ Collection of mods and custom configurations.
 
 ## Mods
 - [Appearance Change Unlocker](https://www.nexusmods.com/cyberpunk2077/mods/3850)
+- [Appearance Menu Mod](https://www.nexusmods.com/cyberpunk2077/mods/790)
 - [Armor Fix for All Weapons](https://www.nexusmods.com/cyberpunk2077/mods/2834)
 - [Auto Component Upgrade](https://www.nexusmods.com/cyberpunk2077/mods/2264)
 - [Auto Med Upgrade](https://www.nexusmods.com/cyberpunk2077/mods/2248)
 - [AutoHeal](https://www.nexusmods.com/cyberpunk2077/mods/2148)
+- [Constant Upgrade Cost](https://www.nexusmods.com/cyberpunk2077/mods/2692)
 - [Disable Loading Cinematics](https://www.nexusmods.com/cyberpunk2077/mods/3105)
 - [Drive It Like You Stole It](https://www.nexusmods.com/cyberpunk2077/mods/348)
 - [Hide Read Shards](https://www.nexusmods.com/cyberpunk2077/mods/2820)
@@ -28,6 +30,7 @@ Collection of mods and custom configurations.
 - [Quiet Menus](https://www.nexusmods.com/cyberpunk2077/mods/3678)
 - [Ragdoll Physics Overhaul](https://www.nexusmods.com/cyberpunk2077/mods/3858)
 - [Restore Crowd Finishers](https://www.nexusmods.com/cyberpunk2077/mods/2277)
+- [Simple Flashlight](https://www.nexusmods.com/cyberpunk2077/mods/2913)
 - [Simple XP Multiplier](https://www.nexusmods.com/cyberpunk2077/mods/3136)
 - [Skip Main Menu](https://www.nexusmods.com/cyberpunk2077/mods/2437)
 - [True Hidden Everything](https://www.nexusmods.com/cyberpunk2077/mods/2206)
@@ -48,4 +51,4 @@ Collection of mods and custom configurations.
 
 This list is only updated intermittently and may be incomplete. Check recent commits to see if anything's been added since last update.
 
-Last updated 2022-02-22
+Readme last updated 2022-02-24.
