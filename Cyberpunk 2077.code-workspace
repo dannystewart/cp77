@@ -5,61 +5,60 @@
     }
   ],
   "settings": {
-    "explorerExclude.backup": null,
     "files.exclude": {
-      "**/.git": true,
-      "**/.svn": false,
-      "**/.hg": false,
-      "**/CVS": false,
-      "**/.DS_Store": true,
-      "**/Thumbs.db": false,
-      "**/.pytest_cache": false,
-      "**/.vscode": false,
-      "**/__pycache__": false,
-      "**/node_modules": false,
-      "*.sublime-*": false,
-      "env*": false,
-      "venv": false,
-      "**/*.dll": false,
+      "**/*.cache": false,
+      "**/*.dll": true,
       "**/*.exe": false,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.vscode": false,
+      "**/LICENSE": false,
+      "**/ThirdParty_LICENSES": true,
+      "**/Thumbs.db": false,
+      "*.txt": false,
       "BonusContent": false,
+      "archive\\pc/content": false,
+      "bin/x64/ReShade.ini": true,
+      "bin/x64/Symsrv.ini": true,
+      "bin/x64/global.ini": true,
       "bin\\x64/CrashReporter": false,
       "bin\\x64/d3d12on7": false,
-      "*.txt": false,
       "cache": false,
+      "engine/tools": true,
+      "engine/galaxy": true,
+      "env*": false,
+      "launcher-configuration.json": false,
       "r6/cache": false,
-      "**/*.cache": false,
-      "engine/tools": false,
-      "**/LICENSE": false,
-      "archive\\pc/content": false,
-      "launcher-configuration.json": false
+      "venv": false
     },
-    "vscodeGitCommit.template": ["{feat}: {message}"],
+    "vscodeGitCommit.template": [
+      "{feat}: {message}"
+    ],
     "vscodeGitCommit.variables": {
       "feat": [
         {
-          "label": "docs",
-          "detail": "Updates to documentation, readme, notes, etc."
+          "detail": "Updates to documentation, readme, notes, etc.",
+          "label": "docs"
         },
         {
-          "label": "new",
-          "detail": "Added a new mod"
+          "detail": "Added a new mod",
+          "label": "new"
         },
         {
-          "label": "update",
-          "detail": "Updated an existing mod"
+          "detail": "Updated an existing mod",
+          "label": "update"
         },
         {
-          "label": "config",
-          "detail": "Custom configurations for myself"
+          "detail": "Custom configurations for myself",
+          "label": "config"
         },
         {
-          "label": "tweaks",
-          "detail": "Minor tweaks or files edited/written by the game"
+          "detail": "Minor tweaks or files edited/written by the game",
+          "label": "tweaks"
         },
         {
-            "label": "meta",
-            "detail": "Meta stuff pertaining to the repository itself"
+          "detail": "Meta stuff pertaining to the repository itself",
+          "label": "meta"
         }
       ]
     }
