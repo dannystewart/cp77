@@ -1,38 +1,67 @@
 {
-    "folders": [
-        {
-            "path": "."
-        }
-    ],
-    "settings": {
-        "explorerExclude.backup": null,
-        "files.exclude": {
-            "**/.git": true,
-            "**/.svn": false,
-            "**/.hg": false,
-            "**/CVS": false,
-            "**/.DS_Store": true,
-            "**/Thumbs.db": false,
-            "**/.pytest_cache": false,
-            "**/.vscode": false,
-            "**/__pycache__": false,
-            "**/node_modules": false,
-            "*.sublime-*": false,
-            "env*": false,
-            "venv": false,
-            "**/*.dll": false,
-            "**/*.exe": false,
-            "BonusContent": false,
-            "bin\\x64/CrashReporter": false,
-            "bin\\x64/d3d12on7": false,
-            "*.txt": false,
-            "cache": false,
-            "r6/cache": false,
-            "**/*.cache": false,
-            "engine/tools": false,
-            "**/LICENSE": false,
-            "archive\\pc/content": false,
-            "launcher-configuration.json": false
-        }
+  "folders": [
+    {
+      "path": "."
     }
+  ],
+  "settings": {
+    "explorerExclude.backup": null,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": false,
+      "**/.hg": false,
+      "**/CVS": false,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": false,
+      "**/.pytest_cache": false,
+      "**/.vscode": false,
+      "**/__pycache__": false,
+      "**/node_modules": false,
+      "*.sublime-*": false,
+      "env*": false,
+      "venv": false,
+      "**/*.dll": false,
+      "**/*.exe": false,
+      "BonusContent": false,
+      "bin\\x64/CrashReporter": false,
+      "bin\\x64/d3d12on7": false,
+      "*.txt": false,
+      "cache": false,
+      "r6/cache": false,
+      "**/*.cache": false,
+      "engine/tools": false,
+      "**/LICENSE": false,
+      "archive\\pc/content": false,
+      "launcher-configuration.json": false
+    },
+    "vscodeGitCommit.template": ["{feat}: {message}"],
+    "vscodeGitCommit.variables": {
+      "feat": [
+        {
+          "label": "docs",
+          "detail": "Updates to documentation, readme, notes, etc."
+        },
+        {
+          "label": "new",
+          "detail": "Added a new mod"
+        },
+        {
+          "label": "update",
+          "detail": "Updated an existing mod"
+        },
+        {
+          "label": "config",
+          "detail": "Custom configurations for myself"
+        },
+        {
+          "label": "tweaks",
+          "detail": "Minor tweaks or files edited/written by the game"
+        },
+        {
+            "label": "meta",
+            "detail": "Meta stuff pertaining to the repository itself"
+        }
+      ]
+    }
+  }
 }
