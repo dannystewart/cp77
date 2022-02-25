@@ -958,7 +958,7 @@
 	<hold action="left_stick_y_scroll_down"		timeout="0.1" />
 
 	<hold action="disassemble_item"				timeout="0.2" />
-	<hold action="craft_item"			  		timeout="0.4" />
+	<hold action="craft_item"			  		timeout="0.2" />
 	<hold action="use_item"						timeout="0.4" />
 	<hold action="upgrade_attribute"			timeout="0.4" />
 	<hold action="upgrade_perk"					timeout="0.4" />
