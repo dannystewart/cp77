@@ -1,0 +1,6 @@
+registerHotkey("summon_vehicle", "Toggle Vehicle Summon", function()
+  vs = Game.GetVehicleSystem()
+  vs:ToggleSummonMode()
+  Game.GetPlayer():SetWarningMessage("vehicle summon toggled")
+  print("Toggle Vehicle Summon set by keypress")
+end)
