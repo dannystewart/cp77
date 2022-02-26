@@ -17,6 +17,7 @@
       "**/Thumbs.db": true,
       "*.txt": false,
       "BonusContent": true,
+      "*.code-workspace": true,
       "archive\\pc/content": true,
       "bin/x64/ReShade.ini": true,
       "bin/x64/Symsrv.ini": true,
