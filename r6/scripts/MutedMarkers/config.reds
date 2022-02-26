@@ -16,7 +16,7 @@ public class LootConfig {
   // Visibility for Rate items (blue)
   public static func Rare() -> MarkerVisibility = MarkerVisibility.LineOfSight
   // Visibility for Uncommon items (green)
-  public static func Uncommon() -> MarkerVisibility = MarkerVisibility.LineOfSight
+  public static func Uncommon() -> MarkerVisibility = MarkerVisibility.Scanner
   // Visibility for Common items (white)
   public static func Common() -> MarkerVisibility = MarkerVisibility.Hidden
   // Visibility for Shards
