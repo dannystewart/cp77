@@ -34,6 +34,7 @@ Collection of mods and custom configurations.
 - [Simple XP Multiplier](https://www.nexusmods.com/cyberpunk2077/mods/3136)
 - [Skip Main Menu](https://www.nexusmods.com/cyberpunk2077/mods/2437)
 - [True Hidden Everything](https://www.nexusmods.com/cyberpunk2077/mods/2206)
+- [Toggle Vehicle Summon](https://www.nexusmods.com/cyberpunk2077/mods/754)
 - [Vehicle Customizer](https://www.nexusmods.com/cyberpunk2077/mods/3689)
 - [Weather Probability Rebalance](https://www.nexusmods.com/cyberpunk2077/mods/3196)
 
