@@ -1,14 +1,14 @@
 {
-  "numSlots":0,
+  "numSlots":1,
   "fadeInDuration":2,
   "slots":[
     {
       "grenadeCycle":true,
       "grenadeQuality":"Regular",
-      "type":"BounceBack",
-      "button":"dpad_up",
+      "type":"OpticalCamo",
+      "button":"dpad_left",
       "key":"IK_Tilde",
-      "holdModifier":"QuickMelee"
+      "holdModifier":"ToggleCrouch"
     },
     {
       "grenadeCycle":true,
