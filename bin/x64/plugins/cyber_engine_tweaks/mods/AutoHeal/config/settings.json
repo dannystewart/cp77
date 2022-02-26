@@ -1,1 +1,1 @@
-{"autoUse":true,"showHealAlert":true,"combatTimer":1,"convertFood":false,"showHealMsg":true,"useMaxDoc":1,"useAtPlayerHealth":50,"useBounceBack":2,"showActiveMsg":true,"foodCheckTime":10,"useFood":false,"oncePerCombat":false,"endCombatReuse":true}
+{"autoUse":true,"showHealAlert":true,"combatTimer":1,"convertFood":true,"showHealMsg":true,"useMaxDoc":1,"useAtPlayerHealth":50,"useBounceBack":2,"showActiveMsg":true,"foodCheckTime":10,"useFood":true,"oncePerCombat":false,"endCombatReuse":true}
