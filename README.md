@@ -21,6 +21,7 @@ Collection of mods and custom configurations.
 - [Crafting Ammo Limit](https://www.nexusmods.com/cyberpunk2077/mods/2077)
 - [Custom Quickslots](https://www.nexusmods.com/cyberpunk2077/mods/3096)
 - [Disassembly Result Multiplier](https://www.nexusmods.com/cyberpunk2077/mods/2877?tab=files&file_id=14864)
+- [FreeFly](https://www.nexusmods.com/cyberpunk2077/mods/780)
 - [Enhanced Weather Transitions](https://www.nexusmods.com/cyberpunk2077/mods/3901)
 - [Limited HUD](https://www.nexusmods.com/cyberpunk2077/mods/2592) (with [optional extras](https://www.nexusmods.com/cyberpunk2077/mods/2592?tab=files))
 - [Muted Markers](https://www.nexusmods.com/cyberpunk2077/mods/1727)
@@ -52,4 +53,4 @@ Collection of mods and custom configurations.
 
 This list is only updated intermittently and may be incomplete. Check recent commits to see if anything's been added since last update.
 
-Readme last updated 2022-02-25.
+Readme last updated 2022-02-26 (added FreeFly).
