@@ -12,7 +12,7 @@ public final const func GetItemFinalUpgradeCost(itemData: wref<gameItemData>) ->
       // Start of change
       // Replacing the following line to use a fixed upgradeNumber.
       // ingredients[i].quantity = ingredients[i].quantity * Cast<Int32>(upgradeNumber);
-      ingredients[i].quantity = ingredients[i].quantity * Cast<Int32>(2.00);
+      ingredients[i].quantity = ingredients[i].quantity * Cast<Int32>(8.00);
       // End of change
       ingredients[i].baseQuantity = ingredients[i].quantity;
       i += 1;
