@@ -14,7 +14,7 @@ public class LootConfig {
   // Visibility for Epic items (purple)
   public static func Epic() -> MarkerVisibility = MarkerVisibility.ThroughWalls
   // Visibility for Rate items (blue)
-  public static func Rare() -> MarkerVisibility = MarkerVisibility.LineOfSight
+  public static func Rare() -> MarkerVisibility = MarkerVisibility.Scanner
   // Visibility for Uncommon items (green)
   public static func Uncommon() -> MarkerVisibility = MarkerVisibility.Scanner
   // Visibility for Common items (white)
