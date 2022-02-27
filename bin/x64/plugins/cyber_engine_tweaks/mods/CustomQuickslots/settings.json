@@ -3,12 +3,12 @@
   "fadeInDuration":2,
   "slots":[
     {
-      "grenadeCycle":true,
+      "grenadeCycle":false,
       "grenadeQuality":"Regular",
       "type":"OpticalCamo",
-      "button":"dpad_left",
+      "button":"dpad_down",
       "key":"IK_Tilde",
-      "holdModifier":"ToggleCrouch"
+      "holdModifier":"QuickMelee"
     },
     {
       "grenadeCycle":true,
