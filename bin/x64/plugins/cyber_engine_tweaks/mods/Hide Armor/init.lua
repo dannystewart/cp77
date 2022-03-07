@@ -10,6 +10,7 @@
 local GameUI = require('GameUI')
 local Cron = require('Cron')
 local Localization = require('Localization')
+local enableNativeUI = true
 local nativeSettings
 local settingsTables = {}
 local isInventorUIEnabled
@@ -104,9 +105,25 @@ function Class:Setup()
 	self.Transaction = GetTransactionSystem
 
 	-- Load
-	self:LoadClothes()
+	Cron.After(0.7, function()
+		self:LoadClothes()
+	end)
+
+	Cron.After(3.0, function()
+		if Mod.Equipment:ShouldShowGenitals() and Mod:IsHidden('Legs') then
+			self:Switch('Legs', false, true)
+		end
+	end)
 
 	return true
+end
+
+function Class:ResetClothes()
+	for iter, elem in pairs(self.types) do
+		if not self:GetBlockade(elem) then
+			self:Switch(elem, false, true)
+		end
+	end
 end
 
 function Class:LoadClothes()
@@ -179,25 +196,24 @@ function Class:Switch(Area, IsHidden, Silent)
 
 	if self:GetBlockade(Area) and not Silent then return end
 
-	if IsHidden then
+	local itemID = self.Equipment:GetActiveItem(Area)
+	if IsHidden and itemID ~= self.emptyItemID then
 		if Area == 'Legs' then
 			if self.Equipment:ShouldShowGenitals() then
 				self.Equipment:ClearItemAppearance(self.Transaction, Area)
 			end
 
-			-- clearitemappearance removes underwear from tpp
-			self.Equipment:ResetItemAppearance(self.Transaction, 'UnderwearBottom')
 			self.Equipment:ResetItemAppearanceEvent('UnderwearBottom')
 		end
 
 		self.Equipment:ClearItemAppearanceEvent(Area)
-	else
+	elseif itemID ~= self.emptyItemID then
 		self.Equipment:ResetItemAppearanceEvent(Area)
 	end
 end
 
 function Class:Toggle(Area)
-	if nativeSettings and settingsTables[Area] then
+	if enableNativeUI and nativeSettings and settingsTables[Area] then
 		nativeSettings.setOption(settingsTables[Area], self:IsHidden(Area))
 	else
 		self:Switch(Area, not self:IsHidden(Area))
@@ -222,7 +238,7 @@ Mod = Class
 
 function InitNativeUI()
 	nativeSettings = GetMod("nativeSettings")
-	if nativeSettings then
+	if enableNativeUI and nativeSettings then
 		nativeSettings.addTab("/TrueHiddenEverything", "True Hidden Everything")
 	end
 end
@@ -268,12 +284,17 @@ end
 function RegisterNativeUI()
 	languageID = Localization.GetLanguage()
 
-	if nativeSettings then
+	if enableNativeUI and nativeSettings then
 		nativeSettings.removeSubcategory("/TrueHiddenEverything/preferences")
 
 		AddVisibilityUI(languageID)
 		AddPreferencesUI(languageID)
 	end
+end
+
+function DecreaseEventsSent()
+	local events = Game.GetScriptableSystemsContainer():Get(CName.new('EquipmentSystem')):GetPlayerData(Game.GetPlayerSystem():GetLocalPlayerMainGameObject()).eventsSent
+	Game.GetScriptableSystemsContainer():Get(CName.new('EquipmentSystem')):GetPlayerData(Game.GetPlayerSystem():GetLocalPlayerMainGameObject()).eventsSent = math.max(events - 1, 0)
 end
 
 registerForEvent('onInit', function()
@@ -302,6 +323,7 @@ registerForEvent('onInit', function()
 	-- Visiblity getters
 	Override('EquipmentSystemPlayerData', 'IsVisualTagActive', function(self, Tag, Wrapped)
 		local area = Mod.tagToArea[Tag.value]
+
 		if area and Mod:IsHidden(area) and not Mod:GetBlockade(area) then
 			return true
 		else
@@ -309,13 +331,11 @@ registerForEvent('onInit', function()
 		end
 	end)
 
-	Override('EquipmentSystemPlayerData', 'IsSlotHidden', function(self, Area, Wrapped)
-		if Area.value == 'Legs' and not Mod.Ready then
-			return false
-		elseif Mod:IsCloth(Area) and not Mod:GetBlockade(Area) then
-			return Mod:IsHidden(Area)
-		else
-			return Wrapped(Area)
+	-- Update Inner chest
+	Override('EquipmentSystemPlayerData', 'UpdateInnerChest', function(self, ts, Wrapped)
+		local itemID = self:GetActiveItem(gamedataEquipmentArea.InnerChest)
+		if ItemID.IsValid(itemID) and not self:IsSlotHidden(gamedataEquipmentArea.InnerChest) then
+			self:ResetItemAppearanceByTask(ts, gamedataEquipmentArea.InnerChest, true)
 		end
 	end)
 
@@ -325,25 +345,56 @@ registerForEvent('onInit', function()
 		local equipmentSystemPlayer = equipmentSystem:GetPlayerData(Game.GetPlayerSystem():GetLocalPlayerMainGameObject())
 		local area = equipmentSystem.GetEquipAreaType(itemID)
 
-		if not (area.value == 'InnerChest' and Mod:IsHidden('InnerChest')) then
+		if not (area.value == 'InnerChest' and (Mod:IsHidden('InnerChest') or Mod:GetBlockade('InnerChest'))) then
 			Wrapped(obj, itemID)
 		end
+	end)
+
+	-- On Clear Item
+	Override('EquipmentSystemPlayerData', 'OnClearItemAppearance', function(self, resetItemID, Wrapped)
+		self:OnUnequipProcessVisualTags(resetItemID, false)
+
+		DecreaseEventsSent()
+
+		self:FinalizeVisualTagProcessing()
+	end)
+
+	-- On Reset Item
+	Override('EquipmentSystemPlayerData', 'OnResetItemAppearance', function(self, resetItemID, Wrapped)
+		self:OnEquipProcessVisualTags(resetItemID)
+
+		DecreaseEventsSent()
+
+		self:FinalizeVisualTagProcessing()
 	end)
 
 	-- On Visual Tags
 	Override('EquipmentSystemPlayerData', 'OnUnequipProcessVisualTags', function(self, itemID, isUnequipping, Wrapped)
 		local equipmentSystem = Game.GetScriptableSystemsContainer():Get(CName.new('EquipmentSystem'))
 		local transactionSystem = Game.GetTransactionSystem()
-		local itemEntity = transactionSystem:GetItemInSlot(self.owner, equipmentSystem.GetPlacementSlot(itemID))
 		local areaType = equipmentSystem.GetEquipAreaType(itemID)
+		local cus
+
+		if Mod.Ready and ((areaType.value == 'Legs' and isUnequipping) or transactionSystem:IsSlotEmpty(self.owner, TweakDBID('AttachmentSlots.Legs'))) and self:ShouldShowGenitals() then
+			cus = Mod.Player:FindComponentByName('uiCharacterCustomizationGenitalsController0140')
+			if cus and not cus.forceHideGenitals then
+				transactionSystem:RemoveItemFromSlot(Mod.Player, TweakDBID.new("AttachmentSlots.UnderwearBottom"), true, false, true)
+				Game.UnequipItem('UnderwearBottom', '0')
+			end
+		end
+
+		local isUnderwearHidden = self:IsUnderwearHidden()
+		local isEvaluated = self:EvaluateUnderwearVisibility(itemID)
 
 		Wrapped(itemID, isUnequipping)
 
-		if itemEntity then
-			if areaType.value == 'Outfit' then
-				for iter, elem in pairs(Mod.types) do
-					Mod:Switch(elem, Mod:IsHidden(elem), true)
-				end
+		if (areaType.value == 'Head' or areaType.value == 'Face') and not Mod:IsHidden('InnerChest') then
+			self:ResetItemAppearanceEvent('InnerChest')
+		end
+
+		if areaType.value == 'Outfit' then
+			for iter, elem in pairs(Mod.types) do
+				Mod:Switch(elem, Mod:IsHidden(elem), true)
 			end
 		end
 	end)
@@ -366,30 +417,35 @@ registerForEvent('onInit', function()
 		elseif itemEntity then
 			visualTagsTweakDB = transactionSystem:GetVisualTagsByItemID(itemID, self.owner)
 			for iter, elem in pairs(visualTagsTweakDB) do
+				
 				local slotInfoIndex = self:GetSlotsInfoIndex(elem)
 				if slotInfoIndex > -1 and self.clothingSlotsInfo then
-					local clothingSlotInfo = self.clothingSlotsInfo[slotInfoIndex]
-					if clothingSlotInfo then
+					local clothingSlotInfo = self.clothingSlotsInfo[slotInfoIndex + 1]
+					if clothingSlotInfo and clothingSlotInfo.areaType ~= areaType then
 						local isSlotEmpty = transactionSystem:IsSlotEmpty(self.owner, clothingSlotInfo.equipSlot)
 						if not isSlotEmpty then
-							if Mod:IsHidden(clothingSlotInfo.areaType.value) or not string.find(elem.value, 'hide_') then
-								self:ClearItemAppearanceEvent(clothingSlotInfo.areaType)
-							end
+							self:ClearItemAppearanceEvent(clothingSlotInfo.areaType)
 						end
 					end
 				end
 
 				local shouldPartial = elem.value == 'hide_T1part' and not Mod:IsHidden('OuterChest')
-				if areaType == gamedataEquipmentArea.OuterChest and (self:IsPartialVisualTagActive(itemID, transactionSystem) or shouldPartial) then
+				if areaType == gamedataEquipmentArea.OuterChest and self:IsPartialVisualTagActive(itemID, transactionSystem) and shouldPartial then
 					self.isPartialVisualTagActive = true
           			self:UpdateInnerChest(transactionSystem)
+				end
+
+				local isGenitalVisible = false
+				if Mod.Ready then
+					local cus = Mod.Player:FindComponentByName('uiCharacterCustomizationGenitalsController0140')
+					isGenitalVisible = cus and not cus.forceHideGenitals
 				end
 
 				isUnderwearHidden = self:IsUnderwearHidden()
 				local areaEqualsUnderwear = areaType == gamedataEquipmentArea.UnderwearBottom
 				local isItemValid = ItemID.IsValid(self:GetActiveItem(gamedataEquipmentArea.Legs))
 				local isVisualTagActive = self:IsVisualTagActive(CName.new("hide_L1"))
-				if (areaEqualsUnderwear or not isUnderwearHidden) and (isItemValid or isVisualTagActive) and not (Mod:IsHidden('Legs') or self:ShouldShowGenitals()) then
+				if (areaEqualsUnderwear or not isUnderwearHidden) and ((isVisualTagActive and not Mod:IsHidden('Legs')) or (self:ShouldShowGenitals() and isGenitalVisible and not isItemValid) or (isItemValid and not Mod:IsHidden('Legs'))) then
 					self:ClearItemAppearanceEvent(gamedataEquipmentArea.UnderwearBottom)
 				end
 
@@ -403,26 +459,18 @@ registerForEvent('onInit', function()
 			end
 		end
 
-		if itemEntity then
+		if areaType.value == 'OuterChest' then
 			visualTagsTweakDB = transactionSystem:GetVisualTagsByItemID(itemID, self.owner)
-			if areaType.value == 'OuterChest' then
-				self.isPartialVisualTagActive = false
-
-				for iter, elem in pairs(visualTagsTweakDB) do
-					if elem.value == 'hide_T1part' then
-						self.isPartialVisualTagActive = not Mod:IsHidden('OuterChest')
-					end
-				end
-
-				self:UpdateInnerChest(transactionSystem)
-			elseif areaType.value == 'Outfit' then
-				for iter, elem in pairs(visualTagsTweakDB) do
-					local tagArea = Mod.tagToArea[elem.value]
-					if tagArea then
-						Mod:Switch(tagArea, true, true)
-					end
+			self.isPartialVisualTagActive = false
+			for iter, elem in pairs(visualTagsTweakDB) do
+				if elem.value == 'hide_T1part' then
+					self.isPartialVisualTagActive = not Mod:IsHidden('OuterChest')
 				end
 			end
+
+			self:UpdateInnerChest(transactionSystem)
+		elseif (areaType.value == 'Head' or areaType.value == 'Face') and not Mod:IsHidden('InnerChest') then
+			self:ResetItemAppearanceEvent('InnerChest')
 		end
 	end)
 
@@ -472,6 +520,10 @@ registerForEvent('onInit', function()
 		end
 	end)
 
+	GameUI.Observe(GameUI.Event.SessionEnd, function()
+		Mod:Destroy()
+	end)
+
 	GameUI.Observe(GameUI.Event.SceneEnter, function()
 		Cron.After(0.6, function()
 			if not Mod.Ready and Game.GetPlayer() ~= nil then
@@ -479,9 +531,13 @@ registerForEvent('onInit', function()
 			end
 		end)
 	end)
-	
-	GameUI.Observe(GameUI.Event.SessionEnd, function()
-		Mod:Destroy()
+
+	GameUI.Observe(GameUI.Event.SceneExit, function()
+		Cron.After(0.7, function()
+			if Mod.Ready and Game.GetPlayer() ~= nil then
+				Mod:Setup()
+			end
+		end)
 	end)
 
 	-- Mirrors character edit
@@ -489,7 +545,9 @@ registerForEvent('onInit', function()
 		local self = Mod
 		if not self.Ready then return end
 
-		self:LoadClothes()
+		Cron.After(0.6, function()
+			self:LoadClothes()
+		end)
 	end)
 end)
 
@@ -526,7 +584,7 @@ end)
 registerHotkey('enable_ui', 'Toggle Inventory UI', function()
 	local state = Mod:GetPreference('Inventory') == 1
 
-	if nativeSettings and settingsTables['Inventory'] then
+	if enableNativeUI and nativeSettings and settingsTables['Inventory'] then
 		nativeSettings.setOption(settingsTables['Inventory'], not state)
 	elseif state then
 		Mod:SetPreference('Inventory', 0)
