@@ -47,6 +47,8 @@ public class CharacterPresetManager {
 
   private let selectCharacterPresetLabel: ref<inkText>;
 
+  private let randomizeAppearanceBtn: ref<SimpleButton>;
+
   //ScrollArea shit
   private let presetScrollAreaWrapper: ref<inkHorizontalPanel>;
   private let presetScrollArea: ref<inkScrollArea>;
@@ -98,6 +100,14 @@ public class CharacterPresetManager {
 
     this.myVerticalPanel = this.morphMenu.GetChildWidgetByPath(n"presets") as inkVerticalPanel;
     this.myVerticalPanel.RemoveAllChildren();
+
+    this.randomizeAppearanceBtn = SimpleButton.Create();
+    this.randomizeAppearanceBtn.SetText("Randomize Appearance");
+    this.randomizeAppearanceBtn.SetWidth(600);
+		this.randomizeAppearanceBtn.SetFlipped(true);
+		this.randomizeAppearanceBtn.ToggleAnimations(true);
+		this.randomizeAppearanceBtn.ToggleSounds(true);
+    this.randomizeAppearanceBtn.Reparent(this.myVerticalPanel);
 
     this.selectCharacterPresetLabel = new inkText();
     this.selectCharacterPresetLabel.SetText("Select Preset:");
@@ -302,12 +312,14 @@ public class CharacterPresetManager {
   }
 
   private func RegisterCallbacks() -> Void {
+    this.randomizeAppearanceBtn.RegisterToCallback(n"OnRelease", this.morphMenu, n"OnRandomize");
     this.savePresetBtn.RegisterToCallback(n"OnRelease", this, n"OnClickSavePreset");
     this.presetScrollSliderHandle.RegisterToCallback(n"OnPress", this, n"OnPressSliderHandle");
     this.morphMenu.RegisterToGlobalInputCallback(n"OnPostOnRelease", this, n"OnGlobalInputUnfocus");
   }
 
   private func UnregisterCallbacks() -> Void {
+    this.randomizeAppearanceBtn.UnregisterFromCallback(n"OnRelease", this.morphMenu, n"OnRandomize");
     this.savePresetBtn.UnregisterFromCallback(n"OnRelease", this, n"OnClickSavePreset");
     this.presetScrollSliderHandle.UnregisterFromCallback(n"OnPress", this, n"OnPressSliderHandle");
     this.morphMenu.UnregisterFromGlobalInputCallback(n"OnPostOnRelative", this, n"OnGlobalMove");
@@ -409,7 +421,10 @@ public class CharacterPresetManager {
 
     this.ChangeAppearanceOption(locKey, optionIdx);
     this.presetChangeIndex = this.presetChangeIndex + 1;
-    GameInstance.GetUISystem(this.morphMenu.GetPlayerControlledObject().GetGame()).QueueEvent(new ChangeAppearanceEvent());
+    //GameInstance.GetUISystem(this.morphMenu.GetPlayerControlledObject().GetGame()).QueueEvent(new ChangeAppearanceEvent());
+    //GameInstance.GetDelaySystem(this.morphMenu.GetPlayerControlledObject().GetGame()).DelayEventNextFrame(this.morphMenu.GetPlayerControlledObject(), new ChangeAppearanceEvent());
+    //Change appearance options with a fixed update rate of 30 updates per second
+    GameInstance.GetDelaySystem(this.morphMenu.GetPlayerControlledObject().GetGame()).DelayEvent(this.morphMenu.GetPlayerControlledObject(), new ChangeAppearanceEvent(), 0.03);
   }
 }
 
