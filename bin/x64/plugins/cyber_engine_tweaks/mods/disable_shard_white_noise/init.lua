@@ -1,0 +1,5 @@
+registerForEvent("onInit", function()
+    Override("ShardNotificationController", "OnIntroComplete", function(self, anim)
+        Game.GetSystemRequestsHandler():PauseGame()
+    end)
+end)
